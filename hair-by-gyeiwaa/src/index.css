@@ -21,6 +21,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -251,8 +256,7 @@ button {
   position: sticky;
   top: 0;
   z-index: 40;
-  background: rgb(0 0 0 / 0.92);
-  backdrop-filter: blur(8px);
+  background: var(--black);
   border-bottom: 1px solid var(--line);
 }
 
@@ -340,6 +344,7 @@ button {
   position: fixed;
   inset: 0;
   z-index: 60;
+  overflow: hidden;
   visibility: hidden;
   background: rgb(0 0 0 / 0.6);
   opacity: 0;
@@ -553,6 +558,16 @@ button {
   margin-top: 14px;
 }
 
+.pgrid > li {
+  display: flex;
+}
+
+.pcard {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .pcard__media {
   position: relative;
   aspect-ratio: 4 / 5;
@@ -598,13 +613,15 @@ button {
 }
 
 .pcard__price {
-  margin-top: 4px;
+  margin: 4px 0 14px;
   font-size: 14px;
   color: var(--smoke);
 }
 
 .pcard__btn {
-  margin-top: 14px;
+  margin-top: auto;
+  white-space: nowrap;
+  padding-inline: 10px;
   height: 38px;
   font-size: 11px;
   letter-spacing: 0.14em;
@@ -1767,6 +1784,7 @@ button {
   position: fixed;
   inset: 0;
   z-index: 70;
+  overflow: hidden;
   visibility: hidden;
   transition: visibility 0.3s;
 }
@@ -2142,6 +2160,7 @@ button {
   position: fixed;
   inset: 0;
   z-index: 80;
+  overflow: hidden;
   visibility: hidden;
   transition: visibility 0.35s;
 }
@@ -2332,14 +2351,7 @@ button {
   }
 
   .pgrid--five {
-    grid-template-columns: repeat(5, 46%);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 8px;
-  }
-
-  .pgrid--five > li {
-    scroll-snap-align: start;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -2391,13 +2403,17 @@ button {
   }
 
   .rail ul {
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 18px 14px;
   }
 
-  .rail li {
-    flex: none;
+  .rail__img {
+    width: 76px;
+    height: 98px;
+  }
+
+  .rail__name {
+    font-size: 12px;
   }
 
   .about__grid,
@@ -2441,15 +2457,26 @@ button {
   }
 
   .arches {
-    grid-template-columns: repeat(3, 72%);
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    margin-inline: calc(var(--gutter) * -1);
-    padding-inline: var(--gutter);
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
-  .arches > li {
-    scroll-snap-align: center;
+  .arch__media {
+    aspect-ratio: 5 / 4;
+    border-radius: 200px 200px 0 0;
+  }
+
+  .pgrid--five {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pcard__btn {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+
+  .pcard__name {
+    font-size: 14px;
   }
 
   .lux {
