@@ -2461,11 +2461,6 @@ button {
     gap: 18px;
   }
 
-  .arch__media {
-    aspect-ratio: 5 / 4;
-    border-radius: 200px 200px 0 0;
-  }
-
   .pgrid--five {
     grid-template-columns: repeat(2, 1fr);
   }
