@@ -40,7 +40,7 @@ const details = (p: Product) => [
   },
   {
     title: 'Delivery & returns',
-    body: `Free UK delivery on orders over £${FREE_DELIVERY}, dispatched within 24 hours. Unopened hair in its original packaging can be returned within 14 days.`,
+    body: `Free delivery across Ghana on orders over ${money(FREE_DELIVERY)}, dispatched within 24 hours. Unopened hair in its original packaging can be returned within 14 days.`,
   },
 ]
 
@@ -160,7 +160,7 @@ export default function ProductPage({ product }: { product: Product }) {
             </p>
             <h1 className="pdp__title">{product.name}</h1>
             <p className="pdp__price">
-              {money(price * qty)} GBP
+              {money(price * qty)}
               {qty > 1 && <span className="pdp__each">{money(price)} each</span>}
             </p>
             <p className="pdp__tax">Taxes included. Pay in 3 with Klarna.</p>

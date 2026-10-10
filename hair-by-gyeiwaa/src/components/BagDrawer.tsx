@@ -49,7 +49,7 @@ export default function BagDrawer() {
           <>
             <div className="bag__body">
               <div className="bag__ship" aria-live="polite">
-                <p>{remaining > 0 ? `Spend ${money(remaining)} more for free UK delivery` : 'Your order ships free'}</p>
+                <p>{remaining > 0 ? `Spend ${money(remaining)} more for free delivery` : 'Your order ships free'}</p>
                 <div className="bag__bar" aria-hidden="true">
                   <span style={{ width: `${Math.min(100, (subtotal / FREE_DELIVERY) * 100)}%` }} />
                 </div>
@@ -82,7 +82,7 @@ export default function BagDrawer() {
             <div className="bag__foot">
               <p className="bag__subtotal">
                 <span>Subtotal</span>
-                <span>{money(subtotal)} GBP</span>
+                <span>{money(subtotal)}</span>
               </p>
               <p className="bag__note">Taxes included. Delivery calculated at checkout.</p>
               <button className="btn btn--solid btn--block" onClick={() => setCheckout(true)}>Check out</button>

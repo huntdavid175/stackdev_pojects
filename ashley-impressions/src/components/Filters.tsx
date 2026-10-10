@@ -81,10 +81,10 @@ function Section({ title, children }: { title: string; children: ReactNode }) {
 function PriceRange({ bound, filters, onChange }: { bound: number; filters: Filters; onChange: (f: Filters) => void }) {
   const max = filters.max ?? bound
   const [minText, setMinText] = useState(String(filters.min))
-  const [maxText, setMaxText] = useState(max.toFixed(2))
+  const [maxText, setMaxText] = useState(String(max))
 
   useEffect(() => setMinText(String(filters.min)), [filters.min])
-  useEffect(() => setMaxText(max.toFixed(2)), [max])
+  useEffect(() => setMaxText(String(max)), [max])
 
   const setMin = (v: number) => onChange({ ...filters, min: Math.max(0, Math.min(v, max)) })
   const setMax = (v: number) => {
@@ -101,7 +101,7 @@ function PriceRange({ bound, filters, onChange }: { bound: number; filters: Filt
       </div>
       <div className="price-range__inputs">
         <label>
-          <span aria-hidden="true">$</span>
+          <span aria-hidden="true">GH₵</span>
           <span className="sr-only">From</span>
           <input
             inputMode="decimal"
@@ -113,7 +113,7 @@ function PriceRange({ bound, filters, onChange }: { bound: number; filters: Filt
         </label>
         <span>To</span>
         <label>
-          <span aria-hidden="true">$</span>
+          <span aria-hidden="true">GH₵</span>
           <span className="sr-only">To</span>
           <input
             inputMode="decimal"

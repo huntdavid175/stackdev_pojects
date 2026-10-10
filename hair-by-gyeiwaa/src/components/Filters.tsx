@@ -4,14 +4,14 @@ import { CloseIcon } from '../icons'
 
 // ---------- state ----------
 
-export type PriceBand = 'under-150' | '150-300' | 'over-300'
+export type PriceBand = 'under-2500' | '2500-5000' | 'over-5000'
 export type Filters = { types: ProductType[]; textures: Texture[]; length: number | null; price: PriceBand | null; inStock: boolean }
 export const emptyFilters: Filters = { types: [], textures: [], length: null, price: null, inStock: false }
 
 const PRICE_BANDS: { id: PriceBand; label: string; test: (n: number) => boolean }[] = [
-  { id: 'under-150', label: 'Under £150', test: (n) => n < 150 },
-  { id: '150-300', label: '£150 to £300', test: (n) => n >= 150 && n <= 300 },
-  { id: 'over-300', label: 'Over £300', test: (n) => n > 300 },
+  { id: 'under-2500', label: 'Under GH₵2,500', test: (n) => n < 2500 },
+  { id: '2500-5000', label: 'GH₵2,500 to GH₵5,000', test: (n) => n >= 2500 && n <= 5000 },
+  { id: 'over-5000', label: 'Over GH₵5,000', test: (n) => n > 5000 },
 ]
 
 export const SORTS = [

@@ -14,10 +14,10 @@ type CartState = {
   discount: { code: string; pct: number } | null
 }
 
-export const FREE_SHIPPING_AT = 250
-export const GIFT_WRAP_PRICE = 1
+export const FREE_SHIPPING_AT = 3000
+export const GIFT_WRAP_PRICE = 10
 const CODES: Record<string, number> = { WELCOME10: 10, ASHLEY15: 15 }
-const STORAGE_KEY = 'ai-cart'
+const STORAGE_KEY = 'ai-cart-ghs' // renamed when prices moved to cedis
 
 const empty: CartState = { lines: [], open: false, giftWrap: false, note: '', discount: null }
 

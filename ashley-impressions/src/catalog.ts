@@ -29,30 +29,30 @@ const p = (
 ): Product => ({ id, name, img, price, type, sizes, added: 30, sales: 10, ...extra })
 
 export const products: Product[] = [
-  p('power-couple-kit', 'Power couple kit', 'p-power-couple.jpg', 100, 'Serums', ['30ml', '45ml'], { badge: 'best', sales: 98, added: 40 }),
-  p('snow-mushroom-mask', 'Snow - mushroom day/night mask', 'p-snow-mask.jpg', 70, 'Masks', ['50ml', '75ml'], { sales: 41 }),
-  p('natural-body-wash', 'Natural body wash', 'p-natural-wash.jpg', 210, 'Body & Hands', ['75ml', '100ml'], { badge: 'new', added: 2 }),
-  p('deep-clean-micellar-water', 'Deep clean micellar water', 'related-1.jpg', 89, 'Cleansers', ['45ml', '75ml'], { compareAt: 100, sales: 77 }),
-  p('intense-repair-body-cream', 'Intense Repair Body Cream', 'product-4.jpg', 25, 'Body & Hands', ['50ml', '75ml'], { compareAt: 30, sales: 64 }),
-  p('ultimate-facelift-day-cream', 'Ultimate Facelift Day Cream', 'p-sandalwood.jpg', 30, 'Moisturizer', ['45ml', '75ml'], { badge: 'best', sales: 91 }),
-  p('smooth-whipped-body-treatment', 'Smooth whipped exfoliating body treatment', 'related-4.jpg', 50, 'Body & Hands', ['75ml'], { sales: 22 }),
-  p('gentle-retinol-night-serum', 'Gentle retinol night serum', 'p-gentle.jpg', 50, 'Serums', ['30ml', '45ml'], { badge: 'new', added: 4 }),
-  p('triple-vitamin-c-serum', 'Triple vitamin-c brightening serum', 'p-brightening.jpg', 60, 'Serums', ['30ml', '45ml', '50ml'], { sales: 55 }),
-  p('avocado-hydrating-cleanser', 'Avocado hydrating cleanser', 'p-avocado-cleanser.jpg', 35, 'Cleansers', ['75ml', '100ml'], { sales: 30 }),
-  p('deep-clean-kit', 'Deep clean kit', 'pdp-1.jpg', 159, 'Cleansers', ['50ml', '75ml', '100ml'], { compareAt: 190, sales: 70, added: 12 }),
-  p('exfoliating-daily-cleanser', 'Exfoliating daily cleanser', 'related-2.jpg', 75, 'Cleansers', ['75ml'], { sales: 48 }),
-  p('the-comfy-kit', 'The comfy kit', 'related-3.jpg', 160, 'Body & Hands', ['75ml'], { sales: 35, added: 8 }),
-  p('purifying-face-wash', 'Purifying face wash', 'product-1.jpg', 27, 'Cleansers', ['45ml', '75ml'], { compareAt: 30, sales: 60 }),
-  p('avocado-rescue-moisturiser', 'Avocado rescue moisturiser', 'product-2.jpg', 30, 'Moisturizer', ['50ml'], { badge: 'new', added: 3 }),
-  p('semina-cleansing-oil', 'Semina cleansing oil', 'product-3.jpg', 30, 'Cleansers', ['75ml', '100ml'], { badge: 'best', sales: 88 }),
-  p('balancing-rose-toner', 'Balancing rose toner', 'related-2.jpg', 38, 'Toners', ['75ml', '100ml'], { sales: 18 }),
-  p('pore-refining-toner', 'Pore refining toner', 'p-avocado-cleanser.jpg', 42, 'Toners', ['100ml'], { sales: 26, added: 15 }),
-  p('amore-overnight-mask', 'Amore overnight mask', 'cat-serums.jpg', 55, 'Masks', ['50ml'], { sales: 33 }),
-  p('mood-body-butter', 'Mood body butter', 'cat-body.jpg', 45, 'Body & Hands', ['75ml'], { sales: 21 }),
-  p('blanca-hand-body-wash', 'Blanca hand & body wash', 'cat-moisturizer.jpg', 32, 'Body & Hands', ['75ml', '100ml'], { sales: 39 }),
-  p('hyaluronic-sea-serum', 'Hyaluronic sea serum', 'p-gentle.jpg', 130, 'Serums', ['30ml', '50ml'], { sales: 52 }),
-  p('bio-retinol-mask', 'Bio-retinol mask', 'p-snow-mask.jpg', 65, 'Masks', ['50ml'], { sales: 29, added: 6 }),
-  p('sandalwood-hand-cream', 'Sandalwood hand cream', 'p-sandalwood.jpg', 22, 'Body & Hands', ['30ml', '45ml'], { sales: 45 }),
+  p('power-couple-kit', 'Power couple kit', 'p-power-couple.jpg', 1200, 'Serums', ['30ml', '45ml'], { badge: 'best', sales: 98, added: 40 }),
+  p('snow-mushroom-mask', 'Snow - mushroom day/night mask', 'p-snow-mask.jpg', 840, 'Masks', ['50ml', '75ml'], { sales: 41 }),
+  p('natural-body-wash', 'Natural body wash', 'p-natural-wash.jpg', 2520, 'Body & Hands', ['75ml', '100ml'], { badge: 'new', added: 2 }),
+  p('deep-clean-micellar-water', 'Deep clean micellar water', 'related-1.jpg', 1070, 'Cleansers', ['45ml', '75ml'], { compareAt: 1200, sales: 77 }),
+  p('intense-repair-body-cream', 'Intense Repair Body Cream', 'product-4.jpg', 300, 'Body & Hands', ['50ml', '75ml'], { compareAt: 360, sales: 64 }),
+  p('ultimate-facelift-day-cream', 'Ultimate Facelift Day Cream', 'p-sandalwood.jpg', 360, 'Moisturizer', ['45ml', '75ml'], { badge: 'best', sales: 91 }),
+  p('smooth-whipped-body-treatment', 'Smooth whipped exfoliating body treatment', 'related-4.jpg', 600, 'Body & Hands', ['75ml'], { sales: 22 }),
+  p('gentle-retinol-night-serum', 'Gentle retinol night serum', 'p-gentle.jpg', 600, 'Serums', ['30ml', '45ml'], { badge: 'new', added: 4 }),
+  p('triple-vitamin-c-serum', 'Triple vitamin-c brightening serum', 'p-brightening.jpg', 720, 'Serums', ['30ml', '45ml', '50ml'], { sales: 55 }),
+  p('avocado-hydrating-cleanser', 'Avocado hydrating cleanser', 'p-avocado-cleanser.jpg', 420, 'Cleansers', ['75ml', '100ml'], { sales: 30 }),
+  p('deep-clean-kit', 'Deep clean kit', 'pdp-1.jpg', 1910, 'Cleansers', ['50ml', '75ml', '100ml'], { compareAt: 2280, sales: 70, added: 12 }),
+  p('exfoliating-daily-cleanser', 'Exfoliating daily cleanser', 'related-2.jpg', 900, 'Cleansers', ['75ml'], { sales: 48 }),
+  p('the-comfy-kit', 'The comfy kit', 'related-3.jpg', 1920, 'Body & Hands', ['75ml'], { sales: 35, added: 8 }),
+  p('purifying-face-wash', 'Purifying face wash', 'product-1.jpg', 325, 'Cleansers', ['45ml', '75ml'], { compareAt: 360, sales: 60 }),
+  p('avocado-rescue-moisturiser', 'Avocado rescue moisturiser', 'product-2.jpg', 360, 'Moisturizer', ['50ml'], { badge: 'new', added: 3 }),
+  p('semina-cleansing-oil', 'Semina cleansing oil', 'product-3.jpg', 360, 'Cleansers', ['75ml', '100ml'], { badge: 'best', sales: 88 }),
+  p('balancing-rose-toner', 'Balancing rose toner', 'related-2.jpg', 455, 'Toners', ['75ml', '100ml'], { sales: 18 }),
+  p('pore-refining-toner', 'Pore refining toner', 'p-avocado-cleanser.jpg', 505, 'Toners', ['100ml'], { sales: 26, added: 15 }),
+  p('amore-overnight-mask', 'Amore overnight mask', 'cat-serums.jpg', 660, 'Masks', ['50ml'], { sales: 33 }),
+  p('mood-body-butter', 'Mood body butter', 'cat-body.jpg', 540, 'Body & Hands', ['75ml'], { sales: 21 }),
+  p('blanca-hand-body-wash', 'Blanca hand & body wash', 'cat-moisturizer.jpg', 385, 'Body & Hands', ['75ml', '100ml'], { sales: 39 }),
+  p('hyaluronic-sea-serum', 'Hyaluronic sea serum', 'p-gentle.jpg', 1560, 'Serums', ['30ml', '50ml'], { sales: 52 }),
+  p('bio-retinol-mask', 'Bio-retinol mask', 'p-snow-mask.jpg', 780, 'Masks', ['50ml'], { sales: 29, added: 6 }),
+  p('sandalwood-hand-cream', 'Sandalwood hand cream', 'p-sandalwood.jpg', 265, 'Body & Hands', ['30ml', '45ml'], { sales: 45 }),
 ]
 
 export type Collection = { handle: string; title: string; description: string; banner: string; types: ProductType[] }
@@ -173,4 +173,4 @@ const LINKS: Record<string, string> = {
 /** URL for a menu / category label; anything without its own collection goes to Shop All. */
 export const linkFor = (label: string) => collectionUrl(LINKS[label] ?? 'all')
 
-export const money = (n: number) => `$${n.toFixed(2)}`
+export const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`

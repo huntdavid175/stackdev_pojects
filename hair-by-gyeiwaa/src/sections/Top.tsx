@@ -31,7 +31,7 @@ export function Announcement() {
     <div className="announce">
       <div className="announce__inner container">
         <Socials />
-        <p>Free UK delivery on orders over £{FREE_DELIVERY}</p>
+        <p>Free delivery across Ghana on orders over GH₵{FREE_DELIVERY.toLocaleString('en-US')}</p>
         <p className="announce__right">Pay in 3 with Klarna</p>
       </div>
     </div>

@@ -4,7 +4,7 @@ import { useSyncExternalStore } from 'react'
 export type BagLine = { key: string; id: string; name: string; img: string; length: number; price: number; qty: number }
 type BagState = { lines: BagLine[]; open: boolean }
 
-const STORAGE_KEY = 'hbg-bag'
+const STORAGE_KEY = 'hbg-bag-ghs' // renamed when prices moved to cedis
 
 function load(): BagState {
   try {

@@ -18,7 +18,7 @@ export default function ProductCard({ product, length }: { product: Product; len
         <h3 className="pcard__name">{product.name}</h3>
       </Link>
       <p className="pcard__price">
-        {atLength ? `${money(lengthPrice(product, atLength))} at ${atLength}″` : `From ${money(product.basePrice)} GBP`}
+        {atLength ? `${money(lengthPrice(product, atLength))} at ${atLength}″` : `From ${money(product.basePrice)}`}
       </p>
       <Link href={href} className={`btn btn--outline btn--block pcard__btn${soldOut ? ' is-out' : ''}`} aria-label={`Choose options for ${product.name}`}>
         {soldOut ? 'Sold out' : 'Choose options'}

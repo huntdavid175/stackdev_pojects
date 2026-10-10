@@ -3,7 +3,7 @@ import { addToCart, type CartItem } from '../cart'
 import { BagIcon, Check } from '../icons'
 import { img } from '../asset'
 
-const money = (n: number) => `$${n.toFixed(2)}`
+const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 
 type Props = { title: string; titleClass?: string; items: CartItem[] }
 

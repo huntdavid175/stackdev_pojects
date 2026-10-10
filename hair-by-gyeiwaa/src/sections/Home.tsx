@@ -126,7 +126,7 @@ export function FreeDelivery() {
       <img src={img('satin-waves.jpg')} alt="" className="delivery__bg" />
       <div className="delivery__copy">
         <p className="script delivery__script">Free Delivery</p>
-        <p className="display delivery__line">On orders over £{FREE_DELIVERY}</p>
+        <p className="display delivery__line">On orders over GH₵{FREE_DELIVERY.toLocaleString('en-US')}</p>
       </div>
     </section>
   )

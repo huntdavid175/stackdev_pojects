@@ -4,9 +4,9 @@ export default function SaleBanner() {
       <div className="container">
         <div className="sale">
           <div className="sale__col">
-            <p className="eyebrow">Saving up to $30</p>
+            <p className="eyebrow">Saving up to GH₵360</p>
             <p className="sale__headline">Sale Up To 30%</p>
-            <p className="sale__fine">*Ends December 31 2026, 12:00 PST. T&amp;C's Apply</p>
+            <p className="sale__fine">*Ends December 31 2026, 12:00 GMT. T&amp;C's Apply</p>
           </div>
           <div className="sale__col">
             <h2 className="sale__title">Seasonal Savings Event</h2>

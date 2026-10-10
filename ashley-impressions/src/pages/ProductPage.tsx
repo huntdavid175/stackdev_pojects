@@ -14,15 +14,15 @@ const gallery = [
 ]
 
 const sizes = [
-  { label: '50ml', price: 159, compareAt: 190 },
-  { label: '75ml', price: 189, compareAt: 225 },
-  { label: '100ml', price: 219, compareAt: 260 },
+  { label: '50ml', price: 1910, compareAt: 2280 },
+  { label: '75ml', price: 2270, compareAt: 2700 },
+  { label: '100ml', price: 2630, compareAt: 3120 },
 ]
 
 const upsells = [
-  { name: 'Natural body wash', price: 210, img: 'pdp-upsell-1.jpg' },
-  { name: 'Exfoliating daily cleanser', price: 75, img: 'related-2.jpg' },
-  { name: 'Smooth whipped body treatment', price: 50, img: 'related-4.jpg' },
+  { name: 'Natural body wash', price: 2520, img: 'pdp-upsell-1.jpg' },
+  { name: 'Exfoliating daily cleanser', price: 900, img: 'related-2.jpg' },
+  { name: 'Smooth whipped body treatment', price: 600, img: 'related-4.jpg' },
 ]
 
 const details = [
@@ -36,18 +36,18 @@ const details = [
   },
   {
     title: 'Shipping & return',
-    body: 'Free standard shipping on orders over $50, delivered in 3-5 business days. Unopened products can be returned within 30 days for a full refund or exchange.',
+    body: 'Free delivery across Ghana on orders over GH₵600, delivered in 2-4 business days. Unopened products can be returned within 30 days for a full refund or exchange.',
   },
 ]
 
 const related = [
-  { name: 'Deep clean micellar water', img: 'related-1.jpg', price: 89, compareAt: 100, badge: '-11%' },
-  { name: 'Exfoliating daily cleanser', img: 'related-2.jpg', price: 75 },
-  { name: 'The comfy kit', img: 'related-3.jpg', price: 160 },
-  { name: 'Smooth whipped exfoliating body treatment', img: 'related-4.jpg', price: 50 },
+  { name: 'Deep clean micellar water', img: 'related-1.jpg', price: 1070, compareAt: 1200, badge: '-11%' },
+  { name: 'Exfoliating daily cleanser', img: 'related-2.jpg', price: 900 },
+  { name: 'The comfy kit', img: 'related-3.jpg', price: 1920 },
+  { name: 'Smooth whipped exfoliating body treatment', img: 'related-4.jpg', price: 600 },
 ]
 
-const money = (n: number) => `$${n.toFixed(2)}`
+const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 
 function deliveryWindow() {
   const fmt = (d: Date) => d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' })

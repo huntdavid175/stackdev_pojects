@@ -9,24 +9,24 @@ const items: Item[] = [
   {
     name: 'Hyaluronic sea serum',
     img: 'bundle-1.jpg',
-    sizes: [{ label: '30ml', price: 130 }, { label: '50ml', price: 180 }],
+    sizes: [{ label: '30ml', price: 1560 }, { label: '50ml', price: 2160 }],
     spot: { x: 30, y: 51 },
   },
   {
     name: 'Ultimate Facelift Day Cream',
     img: 'bundle-2.jpg',
-    sizes: [{ label: '45ml', price: 30 }, { label: '90ml', price: 52 }],
+    sizes: [{ label: '45ml', price: 360 }, { label: '90ml', price: 625 }],
     spot: { x: 50, y: 62 },
   },
   {
     name: 'Ultimate Blanca Hair Oil',
     img: 'bundle-3.jpg',
-    sizes: [{ label: '45ml', price: 30 }, { label: '90ml', price: 52 }],
+    sizes: [{ label: '45ml', price: 360 }, { label: '90ml', price: 625 }],
     spot: { x: 68, y: 61 },
   },
 ]
 
-const money = (n: number) => `$${n.toFixed(2)}`
+const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 
 export default function Bundle() {
   const [sizes, setSizes] = useState(items.map(() => 0))

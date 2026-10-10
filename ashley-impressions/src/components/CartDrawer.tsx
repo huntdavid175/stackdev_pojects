@@ -16,12 +16,12 @@ import { CloseIcon, Plus } from '../icons'
 import UpsellCarousel from './UpsellCarousel'
 import { img } from '../asset'
 
-const money = (n: number) => `$${n.toFixed(2)}`
+const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 
 const recommendations = [
-  { name: 'Elements of comfort body oil', price: 120, img: 'cart-upsell-1.jpg' },
-  { name: 'Smooth whipped body treatment', price: 50, img: 'related-4.jpg' },
-  { name: 'Exfoliating daily cleanser', price: 75, img: 'related-2.jpg' },
+  { name: 'Elements of comfort body oil', price: 1440, img: 'cart-upsell-1.jpg' },
+  { name: 'Smooth whipped body treatment', price: 600, img: 'related-4.jpg' },
+  { name: 'Exfoliating daily cleanser', price: 900, img: 'related-2.jpg' },
 ]
 
 function Minus() {

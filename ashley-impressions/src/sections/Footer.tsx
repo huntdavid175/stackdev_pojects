@@ -1,6 +1,6 @@
 import { Link } from '../router'
 import { linkFor } from '../catalog'
-import { ChevronDown, FacebookIcon, InstagramIcon, UsFlag, VimeoIcon, XIcon, YoutubeIcon } from '../icons'
+import { ChevronDown, FacebookIcon, InstagramIcon, GhanaFlag, VimeoIcon, XIcon, YoutubeIcon } from '../icons'
 import { img } from '../asset'
 
 const columns = [
@@ -50,7 +50,7 @@ export default function Footer() {
           <div className="footer__locale">
             <button type="button">English <ChevronDown /></button>
             <button type="button">
-              <UsFlag /> United States (USD $) <ChevronDown />
+              <GhanaFlag /> Ghana (GHS GH₵) <ChevronDown />
             </button>
           </div>
         </div>

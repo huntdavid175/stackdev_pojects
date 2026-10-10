@@ -7,20 +7,20 @@ type Product = { name: string; img: string; price: number; compareAt?: number; b
 
 const products: Record<'skin' | 'body', Product[]> = {
   skin: [
-    { name: 'Ultimate Facelift Day Cream', img: 'product-1.jpg', price: 27, compareAt: 30, badge: { label: '-10%', tone: 'sale' } },
-    { name: 'Ultimate Facelift Day Cream', img: 'product-2.jpg', price: 30, badge: { label: 'New', tone: 'new' } },
-    { name: 'Intense Repair Body Cream', img: 'product-3.jpg', price: 30, badge: { label: 'Bestseller', tone: 'best' } },
-    { name: 'Intense Repair Body Cream', img: 'product-4.jpg', price: 25, compareAt: 30, badge: { label: '-16%', tone: 'sale' } },
+    { name: 'Ultimate Facelift Day Cream', img: 'product-1.jpg', price: 325, compareAt: 360, badge: { label: '-10%', tone: 'sale' } },
+    { name: 'Ultimate Facelift Day Cream', img: 'product-2.jpg', price: 360, badge: { label: 'New', tone: 'new' } },
+    { name: 'Intense Repair Body Cream', img: 'product-3.jpg', price: 360, badge: { label: 'Bestseller', tone: 'best' } },
+    { name: 'Intense Repair Body Cream', img: 'product-4.jpg', price: 300, compareAt: 360, badge: { label: '-16%', tone: 'sale' } },
   ],
   body: [
-    { name: 'Intense Repair Body Cream', img: 'product-4.jpg', price: 25, compareAt: 30, badge: { label: '-16%', tone: 'sale' } },
-    { name: 'Nourishing Body Wash', img: 'product-3.jpg', price: 30, badge: { label: 'Bestseller', tone: 'best' } },
-    { name: 'Avocado Rescue Moisturiser', img: 'product-2.jpg', price: 30, badge: { label: 'New', tone: 'new' } },
-    { name: 'Purifying Hand & Body Wash', img: 'product-1.jpg', price: 27, compareAt: 30, badge: { label: '-10%', tone: 'sale' } },
+    { name: 'Intense Repair Body Cream', img: 'product-4.jpg', price: 300, compareAt: 360, badge: { label: '-16%', tone: 'sale' } },
+    { name: 'Nourishing Body Wash', img: 'product-3.jpg', price: 360, badge: { label: 'Bestseller', tone: 'best' } },
+    { name: 'Avocado Rescue Moisturiser', img: 'product-2.jpg', price: 360, badge: { label: 'New', tone: 'new' } },
+    { name: 'Purifying Hand & Body Wash', img: 'product-1.jpg', price: 325, compareAt: 360, badge: { label: '-10%', tone: 'sale' } },
   ],
 }
 
-const money = (n: number) => `$${n.toFixed(2)}`
+const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 
 export default function FeaturedProducts() {
   const [tab, setTab] = useState<'skin' | 'body'>('skin')

@@ -54,17 +54,16 @@ export const CloseIcon = () => (
   </svg>
 )
 
-export const UsFlag = () => (
+export const GhanaFlag = () => (
   <svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true">
-    <clipPath id="us-flag-clip">
+    <clipPath id="gh-flag-clip">
       <circle cx="15" cy="15" r="15" />
     </clipPath>
-    <g clipPath="url(#us-flag-clip)">
-      <rect width="30" height="30" fill="#fff" />
-      {[0, 2, 4, 6, 8, 10, 12].map((i) => (
-        <rect key={i} y={i * 2.31} width="30" height="2.31" fill="#d22f27" />
-      ))}
-      <rect width="15" height="16.2" fill="#2a4795" />
+    <g clipPath="url(#gh-flag-clip)">
+      <rect width="30" height="10" fill="#ce1126" />
+      <rect y="10" width="30" height="10" fill="#fcd116" />
+      <rect y="20" width="30" height="10" fill="#006b3f" />
+      <path d="M15 11.2l1.1 3.3h3.5l-2.8 2.1 1.1 3.3-2.9-2.1-2.9 2.1 1.1-3.3-2.8-2.1h3.5z" fill="#000" />
     </g>
   </svg>
 )
