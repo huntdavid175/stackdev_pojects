@@ -1,0 +1,10 @@
+{
+  "name": "get-clients-hub",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node hub/build-all.mjs",
+    "start": "node hub/server.mjs",
+    "hub": "node hub/build-all.mjs && node hub/server.mjs"
+  }
+}
