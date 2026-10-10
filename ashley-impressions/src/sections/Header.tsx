@@ -17,10 +17,10 @@ const shopColumns = [
 ]
 
 const collections = [
-  { title: 'New Arrivals', img: 'menu-col-1.jpg' },
-  { title: 'Skincares', img: 'menu-col-2.jpg' },
-  { title: 'On Sale', img: 'menu-col-3.jpg' },
-  { title: 'Season Pick', img: 'menu-col-4.jpg' },
+  { title: 'New Arrivals', img: 'menu-col-1.webp' },
+  { title: 'Skincares', img: 'menu-col-2.webp' },
+  { title: 'On Sale', img: 'menu-col-3.webp' },
+  { title: 'Season Pick', img: 'menu-col-4.webp' },
 ]
 
 type NavItem = { id?: MenuId; label: string; href?: string }
@@ -49,7 +49,7 @@ function ShopPanel() {
         </div>
       ))}
       <Link href={linkFor('Serums')} className="mega-promo">
-        <img src={img('menu-promo.jpg')} alt="" />
+        <img src={img('menu-promo.webp')} alt="" />
         <div className="mega-promo__body">
           <p className="mega-promo__title">Sensitive Skin</p>
           <p className="mega-promo__text">Sustainability is well alive.</p>

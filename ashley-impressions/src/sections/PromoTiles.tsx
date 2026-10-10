@@ -7,7 +7,7 @@ export default function PromoTiles() {
       <div className="container container--narrow promo__grid">
         <Link href="/collections/all" className="promo__summer">
           <div className="promo__summer-media">
-            <img src={img('promo-summer.jpg')} alt="Beach umbrellas against a blue sky" loading="lazy" />
+            <img src={img('promo-summer.webp')} alt="Beach umbrellas against a blue sky" loading="lazy" />
             <span className="promo__mark" aria-hidden="true">A.</span>
           </div>
           <h3 className="promo__summer-title">Focus on Summer</h3>
@@ -15,7 +15,7 @@ export default function PromoTiles() {
         </Link>
 
         <div className="promo__feature">
-          <img src={img('promo-resilient.jpg')} alt="Smiling woman with wet hair by the sea" loading="lazy" />
+          <img src={img('promo-resilient.webp')} alt="Smiling woman with wet hair by the sea" loading="lazy" />
           <div className="promo__feature-body">
             <h3 className="promo__feature-title">For Naturally Resilient Skin</h3>
             <Link href="/collections/moisturizer" className="btn-pill btn-pill--light">Shop now</Link>

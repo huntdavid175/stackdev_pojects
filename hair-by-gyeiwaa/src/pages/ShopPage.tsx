@@ -7,7 +7,7 @@ export default function ShopPage() {
   return (
     <>
       <section className="pbanner pbanner--shop">
-        <img src={img('satin-folds.jpg')} alt="" className="pbanner__bg" />
+        <img src={img('satin-folds.webp')} alt="" className="pbanner__bg" />
         <div className="pbanner__copy container">
           <p className="script pbanner__script">The Shop</p>
           <h1 className="display pbanner__title">All Hair</h1>

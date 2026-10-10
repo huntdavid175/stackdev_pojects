@@ -5,7 +5,7 @@ const right = ['ig-5', 'ig-6', 'ig-7', 'ig-8']
 
 const Tile = ({ src }: { src: string }) => (
   <a href="#" className="ig__tile" aria-label="View post on Instagram">
-    <img src={img(`${src}.jpg`)} alt="" loading="lazy" />
+    <img src={img(`${src}.webp`)} alt="" loading="lazy" />
   </a>
 )
 

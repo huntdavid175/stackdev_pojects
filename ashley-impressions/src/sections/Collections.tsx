@@ -6,17 +6,17 @@ const items = [
   {
     title: 'Skincare For Beach',
     text: 'Water-resistant protection and after-sun care that keeps up with long days in the sun, salt and sand.',
-    img: 'collections.jpg',
+    img: 'collections.webp',
   },
   {
     title: 'Detox Skin Nights',
     text: 'Clarifying cleansers and overnight masks that clear the day away while you sleep.',
-    img: 'promo-resilient.jpg',
+    img: 'promo-resilient.webp',
   },
   {
     title: 'Summer Treatments',
     text: 'Keep your skin fresh and hydrated with lightweight, soothing formulas perfect for warm, sunny days and balmy nights.',
-    img: 'collections.jpg',
+    img: 'collections.webp',
   },
 ]
 

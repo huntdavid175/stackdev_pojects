@@ -8,19 +8,19 @@ type Item = { name: string; img: string; sizes: { label: string; price: number }
 const items: Item[] = [
   {
     name: 'Hyaluronic sea serum',
-    img: 'bundle-1.jpg',
+    img: 'bundle-1.webp',
     sizes: [{ label: '30ml', price: 1560 }, { label: '50ml', price: 2160 }],
     spot: { x: 30, y: 51 },
   },
   {
     name: 'Ultimate Facelift Day Cream',
-    img: 'bundle-2.jpg',
+    img: 'bundle-2.webp',
     sizes: [{ label: '45ml', price: 360 }, { label: '90ml', price: 625 }],
     spot: { x: 50, y: 62 },
   },
   {
     name: 'Ultimate Blanca Hair Oil',
-    img: 'bundle-3.jpg',
+    img: 'bundle-3.webp',
     sizes: [{ label: '45ml', price: 360 }, { label: '90ml', price: 625 }],
     spot: { x: 68, y: 61 },
   },
@@ -87,7 +87,7 @@ export default function Bundle() {
         </div>
 
         <div className="bundle__media">
-          <img src={img('bundle.jpg')} alt="Three amber serum bottles on a stone plinth" loading="lazy" />
+          <img src={img('bundle.webp')} alt="Three amber serum bottles on a stone plinth" loading="lazy" />
           {items.map((item, i) => (
             <span
               key={item.name}

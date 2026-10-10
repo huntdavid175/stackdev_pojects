@@ -6,11 +6,11 @@ import UpsellCarousel from '../components/UpsellCarousel'
 import { img } from '../asset'
 
 const gallery = [
-  { src: 'pdp-1.jpg', alt: 'Deep Clean micellar water and Exfoliating daily cleanser bottles' },
-  { src: 'pdp-2.jpg', alt: 'Cleanser foam in an open palm' },
-  { src: 'pdp-3.jpg', alt: 'Woman in a hair towel applying cleanser' },
-  { src: 'pdp-4.jpg', alt: 'Smiling woman wearing a pore strip' },
-  { src: 'pdp-5.jpg', alt: 'Hands being rinsed under a tap' },
+  { src: 'pdp-1.webp', alt: 'Deep Clean micellar water and Exfoliating daily cleanser bottles' },
+  { src: 'pdp-2.webp', alt: 'Cleanser foam in an open palm' },
+  { src: 'pdp-3.webp', alt: 'Woman in a hair towel applying cleanser' },
+  { src: 'pdp-4.webp', alt: 'Smiling woman wearing a pore strip' },
+  { src: 'pdp-5.webp', alt: 'Hands being rinsed under a tap' },
 ]
 
 const sizes = [
@@ -20,9 +20,9 @@ const sizes = [
 ]
 
 const upsells = [
-  { name: 'Natural body wash', price: 2520, img: 'pdp-upsell-1.jpg' },
-  { name: 'Exfoliating daily cleanser', price: 900, img: 'related-2.jpg' },
-  { name: 'Smooth whipped body treatment', price: 600, img: 'related-4.jpg' },
+  { name: 'Natural body wash', price: 2520, img: 'pdp-upsell-1.webp' },
+  { name: 'Exfoliating daily cleanser', price: 900, img: 'related-2.webp' },
+  { name: 'Smooth whipped body treatment', price: 600, img: 'related-4.webp' },
 ]
 
 const details = [
@@ -41,10 +41,10 @@ const details = [
 ]
 
 const related = [
-  { name: 'Deep clean micellar water', img: 'related-1.jpg', price: 1070, compareAt: 1200, badge: '-11%' },
-  { name: 'Exfoliating daily cleanser', img: 'related-2.jpg', price: 900 },
-  { name: 'The comfy kit', img: 'related-3.jpg', price: 1920 },
-  { name: 'Smooth whipped exfoliating body treatment', img: 'related-4.jpg', price: 600 },
+  { name: 'Deep clean micellar water', img: 'related-1.webp', price: 1070, compareAt: 1200, badge: '-11%' },
+  { name: 'Exfoliating daily cleanser', img: 'related-2.webp', price: 900 },
+  { name: 'The comfy kit', img: 'related-3.webp', price: 1920 },
+  { name: 'Smooth whipped exfoliating body treatment', img: 'related-4.webp', price: 600 },
 ]
 
 const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
@@ -176,7 +176,7 @@ export default function ProductPage() {
             <button
               className="btn-pill btn-pill--dark btn-pill--block pdp__atc"
               onClick={() => {
-                addToCart({ name: 'Deep clean kit', img: 'pdp-1.jpg', price: v.price, variant: v.label })
+                addToCart({ name: 'Deep clean kit', img: 'pdp-1.webp', price: v.price, variant: v.label })
                 setAdded(true)
               }}
             >

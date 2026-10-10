@@ -45,27 +45,27 @@ const p = (
 ): Product => ({ id, name, type, texture, img, basePrice, lengths, sales: 20, added: 40, ...extra })
 
 export const products: Product[] = [
-  p('raw-cambodian-straight', 'Raw Cambodian Straight', 'Bundles', 'Straight', 'p-straight.jpg', 1920, L(12, 30), { tag: 'Bestseller', sales: 96 }),
-  p('raw-burmese-body-wave', 'Raw Burmese Body Wave', 'Bundles', 'Body wave', 'p-bodywave.jpg', 2080, L(12, 30), { sales: 81 }),
-  p('premium-613-blonde', 'Premium 613 Blonde Straight', 'Bundles', 'Straight', 'p-blonde.jpg', 2240, L(14, 30), { tag: 'New', added: 3, sales: 44 }),
-  p('raw-kinky-curly', 'Raw Kinky Curly', 'Bundles', 'Kinky curly', 'p-curly.jpg', 2160, L(12, 26), { sales: 58 }),
-  p('deep-wave-bundle', 'Raw Vietnamese Deep Wave', 'Bundles', 'Deep wave', 'p-brown.jpg', 2320, L(12, 30), { sales: 49 }),
-  p('honey-blonde-wave', 'Honey Blonde Loose Wave', 'Bundles', 'Loose wave', 'p-honey.jpg', 2400, L(16, 30), { added: 9, sales: 37 }),
-  p('silky-straight-bundle', 'Silky Straight Bundle Deal', 'Bundle deals', 'Straight', 'p-comb.jpg', 4160, L(14, 24), { tag: 'Bestseller', sales: 88 }),
-  p('body-wave-deal', 'Body Wave 3 Bundles + Closure', 'Bundle deals', 'Body wave', 'p-wave-back.jpg', 5440, L(16, 26), { sales: 62 }),
-  p('curly-deal', 'Curly 3 Bundles + Frontal', 'Bundle deals', 'Curly', 'p-curls-back.jpg', 5840, L(14, 24), { added: 14, sales: 29 }),
-  p('hd-lace-closure', '5x5 HD Lace Closure', 'Closures', 'Straight', 'p-closure.jpg', 1520, L(12, 20), { tag: 'Sold out', sales: 71 }),
-  p('body-wave-closure', '4x4 Body Wave Closure', 'Closures', 'Body wave', 'p-wave-tone.jpg', 1360, L(12, 20), { sales: 40 }),
-  p('kinky-closure', '5x5 Kinky Curly Closure', 'Closures', 'Kinky curly', 'p-afro.jpg', 1580, L(12, 18), { added: 6, sales: 18 }),
-  p('hd-lace-frontal', '13x4 HD Lace Frontal', 'Frontals', 'Body wave', 'p-bodywave.jpg', 2000, L(14, 22), { sales: 66 }),
-  p('straight-frontal', '13x6 Straight Frontal', 'Frontals', 'Straight', 'p-straight-back.jpg', 2400, L(14, 24), { tag: 'New', added: 2, sales: 24 }),
-  p('deep-wave-frontal', '13x4 Deep Wave Frontal', 'Frontals', 'Deep wave', 'p-brown-wave.jpg', 2160, L(14, 22), { sales: 31 }),
-  p('sleek-straight-wig', 'Sleek Straight HD Wig', 'Wigs', 'Straight', 'col-straight.jpg', 5120, L(16, 30), { tag: 'Bestseller', sales: 90 }),
-  p('glam-body-wave-wig', 'Glam Body Wave Wig', 'Wigs', 'Body wave', 'hero.jpg', 5440, L(18, 30), { sales: 77 }),
-  p('volume-curly-wig', 'Volume Curly Wig', 'Wigs', 'Curly', 'col-curly.jpg', 5680, L(16, 26), { added: 5, sales: 52 }),
-  p('loose-wave-wig', 'Loose Wave Glueless Wig', 'Wigs', 'Loose wave', 'col-bodywave.jpg', 5280, L(18, 28), { tag: 'New', added: 1, sales: 21 }),
-  p('kinky-straight-wig', 'Kinky Straight Wig', 'Wigs', 'Straight', 'about.jpg', 4960, L(16, 26), { sales: 35 }),
-  p('afro-kinky-wig', 'Afro Kinky Curly Wig', 'Wigs', 'Kinky curly', 'banner-slay.jpg', 4640, L(10, 18), { sales: 27 }),
+  p('raw-cambodian-straight', 'Raw Cambodian Straight', 'Bundles', 'Straight', 'p-straight.webp', 1920, L(12, 30), { tag: 'Bestseller', sales: 96 }),
+  p('raw-burmese-body-wave', 'Raw Burmese Body Wave', 'Bundles', 'Body wave', 'p-bodywave.webp', 2080, L(12, 30), { sales: 81 }),
+  p('premium-613-blonde', 'Premium 613 Blonde Straight', 'Bundles', 'Straight', 'p-blonde.webp', 2240, L(14, 30), { tag: 'New', added: 3, sales: 44 }),
+  p('raw-kinky-curly', 'Raw Kinky Curly', 'Bundles', 'Kinky curly', 'p-curly.webp', 2160, L(12, 26), { sales: 58 }),
+  p('deep-wave-bundle', 'Raw Vietnamese Deep Wave', 'Bundles', 'Deep wave', 'p-brown.webp', 2320, L(12, 30), { sales: 49 }),
+  p('honey-blonde-wave', 'Honey Blonde Loose Wave', 'Bundles', 'Loose wave', 'p-honey.webp', 2400, L(16, 30), { added: 9, sales: 37 }),
+  p('silky-straight-bundle', 'Silky Straight Bundle Deal', 'Bundle deals', 'Straight', 'p-comb.webp', 4160, L(14, 24), { tag: 'Bestseller', sales: 88 }),
+  p('body-wave-deal', 'Body Wave 3 Bundles + Closure', 'Bundle deals', 'Body wave', 'p-wave-back.webp', 5440, L(16, 26), { sales: 62 }),
+  p('curly-deal', 'Curly 3 Bundles + Frontal', 'Bundle deals', 'Curly', 'p-curls-back.webp', 5840, L(14, 24), { added: 14, sales: 29 }),
+  p('hd-lace-closure', '5x5 HD Lace Closure', 'Closures', 'Straight', 'p-closure.webp', 1520, L(12, 20), { tag: 'Sold out', sales: 71 }),
+  p('body-wave-closure', '4x4 Body Wave Closure', 'Closures', 'Body wave', 'p-wave-tone.webp', 1360, L(12, 20), { sales: 40 }),
+  p('kinky-closure', '5x5 Kinky Curly Closure', 'Closures', 'Kinky curly', 'p-afro.webp', 1580, L(12, 18), { added: 6, sales: 18 }),
+  p('hd-lace-frontal', '13x4 HD Lace Frontal', 'Frontals', 'Body wave', 'p-bodywave.webp', 2000, L(14, 22), { sales: 66 }),
+  p('straight-frontal', '13x6 Straight Frontal', 'Frontals', 'Straight', 'p-straight-back.webp', 2400, L(14, 24), { tag: 'New', added: 2, sales: 24 }),
+  p('deep-wave-frontal', '13x4 Deep Wave Frontal', 'Frontals', 'Deep wave', 'p-brown-wave.webp', 2160, L(14, 22), { sales: 31 }),
+  p('sleek-straight-wig', 'Sleek Straight HD Wig', 'Wigs', 'Straight', 'col-straight.webp', 5120, L(16, 30), { tag: 'Bestseller', sales: 90 }),
+  p('glam-body-wave-wig', 'Glam Body Wave Wig', 'Wigs', 'Body wave', 'hero.webp', 5440, L(18, 30), { sales: 77 }),
+  p('volume-curly-wig', 'Volume Curly Wig', 'Wigs', 'Curly', 'col-curly.webp', 5680, L(16, 26), { added: 5, sales: 52 }),
+  p('loose-wave-wig', 'Loose Wave Glueless Wig', 'Wigs', 'Loose wave', 'col-bodywave.webp', 5280, L(18, 28), { tag: 'New', added: 1, sales: 21 }),
+  p('kinky-straight-wig', 'Kinky Straight Wig', 'Wigs', 'Straight', 'about.webp', 4960, L(16, 26), { sales: 35 }),
+  p('afro-kinky-wig', 'Afro Kinky Curly Wig', 'Wigs', 'Kinky curly', 'banner-slay.webp', 4640, L(10, 18), { sales: 27 }),
 ]
 
 const byId = (ids: string[]) => ids.map((id) => products.find((pr) => pr.id === id)!)
@@ -83,14 +83,14 @@ export type Collection = {
 }
 
 export const collections: Collection[] = [
-  { handle: 'bundles', title: 'Bundles', script: 'Raw & Virgin', description: 'Single-donor raw hair, sold by the bundle. Most full installs take three.', img: 'p-comb.jpg', match: (pr) => pr.type === 'Bundles' },
-  { handle: 'wigs', title: 'Wigs', script: 'Ready to Slay', description: 'HD lace and glueless units, plucked and ready to wear out of the box.', img: 'col-straight.jpg', match: (pr) => pr.type === 'Wigs' },
-  { handle: 'frontals', title: 'Frontals', script: 'Ear to Ear', description: 'HD lace frontals that melt into every skin tone for a natural hairline.', img: 'about.jpg', match: (pr) => pr.type === 'Frontals' },
-  { handle: 'closures', title: 'Closures', script: 'The Finish', description: 'Lace closures to complete your install, with a pre-plucked parting.', img: 'p-closure.jpg', match: (pr) => pr.type === 'Closures' },
-  { handle: 'bundle-deals', title: 'Bundle Deals', script: 'Save More', description: 'Bundles matched with a closure or frontal, priced together.', img: 'p-wave-back.jpg', match: (pr) => pr.type === 'Bundle deals' },
-  { handle: 'straight', title: 'Straight', script: 'Sleek & Silky', description: 'Bone-straight bundles, frontals and wigs that hold a press and a curl.', img: 'col-straight.jpg', match: (pr) => pr.texture === 'Straight' },
-  { handle: 'body-wave', title: 'Body Wave', script: 'Soft & Bouncy', description: 'Our most versatile texture: full, soft S-waves that wear straight or curled.', img: 'col-bodywave.jpg', match: (pr) => pr.texture === 'Body wave' || pr.texture === 'Loose wave' },
-  { handle: 'curly', title: 'Curly', script: 'Define Me', description: 'Deep waves, curls and kinks that keep their pattern wash after wash.', img: 'col-curly.jpg', match: (pr) => ['Curly', 'Kinky curly', 'Deep wave'].includes(pr.texture) },
+  { handle: 'bundles', title: 'Bundles', script: 'Raw & Virgin', description: 'Single-donor raw hair, sold by the bundle. Most full installs take three.', img: 'p-comb.webp', match: (pr) => pr.type === 'Bundles' },
+  { handle: 'wigs', title: 'Wigs', script: 'Ready to Slay', description: 'HD lace and glueless units, plucked and ready to wear out of the box.', img: 'col-straight.webp', match: (pr) => pr.type === 'Wigs' },
+  { handle: 'frontals', title: 'Frontals', script: 'Ear to Ear', description: 'HD lace frontals that melt into every skin tone for a natural hairline.', img: 'about.webp', match: (pr) => pr.type === 'Frontals' },
+  { handle: 'closures', title: 'Closures', script: 'The Finish', description: 'Lace closures to complete your install, with a pre-plucked parting.', img: 'p-closure.webp', match: (pr) => pr.type === 'Closures' },
+  { handle: 'bundle-deals', title: 'Bundle Deals', script: 'Save More', description: 'Bundles matched with a closure or frontal, priced together.', img: 'p-wave-back.webp', match: (pr) => pr.type === 'Bundle deals' },
+  { handle: 'straight', title: 'Straight', script: 'Sleek & Silky', description: 'Bone-straight bundles, frontals and wigs that hold a press and a curl.', img: 'col-straight.webp', match: (pr) => pr.texture === 'Straight' },
+  { handle: 'body-wave', title: 'Body Wave', script: 'Soft & Bouncy', description: 'Our most versatile texture: full, soft S-waves that wear straight or curled.', img: 'col-bodywave.webp', match: (pr) => pr.texture === 'Body wave' || pr.texture === 'Loose wave' },
+  { handle: 'curly', title: 'Curly', script: 'Define Me', description: 'Deep waves, curls and kinks that keep their pattern wash after wash.', img: 'col-curly.webp', match: (pr) => ['Curly', 'Kinky curly', 'Deep wave'].includes(pr.texture) },
 ]
 
 export const findCollection = (handle: string) => collections.find((c) => c.handle === handle)

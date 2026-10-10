@@ -4,11 +4,11 @@ import { linkFor } from '../catalog'
 import { img } from '../asset'
 
 const categories = [
-  { name: 'Body Care', img: 'cat-body.jpg', tall: false },
-  { name: 'Cleaners', img: 'cat-cleaners.jpg', tall: true },
-  { name: 'Serums', img: 'cat-serums.jpg', tall: false },
-  { name: 'Skincare', img: 'cat-skincare.jpg', tall: true },
-  { name: 'Moisturizer', img: 'cat-moisturizer.jpg', tall: false },
+  { name: 'Body Care', img: 'cat-body.webp', tall: false },
+  { name: 'Cleaners', img: 'cat-cleaners.webp', tall: true },
+  { name: 'Serums', img: 'cat-serums.webp', tall: false },
+  { name: 'Skincare', img: 'cat-skincare.webp', tall: true },
+  { name: 'Moisturizer', img: 'cat-moisturizer.webp', tall: false },
 ]
 
 export default function Categories() {

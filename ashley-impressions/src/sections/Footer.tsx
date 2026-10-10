@@ -62,7 +62,7 @@ export default function Footer() {
           <div className="footer__legal">
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
-            <img src={img('payments.png')} alt="We accept Amex, Apple Pay, Diners Club, Discover, Google Pay, Mastercard, Shop Pay and Visa" className="footer__pay" />
+            <img src={img('payments.webp')} alt="We accept Amex, Apple Pay, Diners Club, Discover, Google Pay, Mastercard, Shop Pay and Visa" className="footer__pay" />
           </div>
         </div>
       </div>

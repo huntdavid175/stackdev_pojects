@@ -8,8 +8,8 @@ import { img } from '../asset'
 export function Hero() {
   return (
     <section className="hero" id="top">
-      <img className="hero__satin" src={img('satin-shine.jpg')} alt="" />
-      <img className="hero__model" src={img('hero.jpg')} alt="Model with long, glossy wavy hair" />
+      <img className="hero__satin" src={img('satin-shine.webp')} alt="" />
+      <img className="hero__model" src={img('hero.webp')} alt="Model with long, glossy wavy hair" />
       <div className="hero__copy container">
         <p className="script hero__script">Raw Luxury Hair</p>
         <h1 className="display hero__title">
@@ -113,7 +113,7 @@ export function About() {
           <a href="#contact" className="btn btn--outline btn--small">Contact us</a>
         </div>
         <div className="about__media">
-          <img src={img('about.jpg')} alt="Model with long, sleek straight hair" loading="lazy" />
+          <img src={img('about.webp')} alt="Model with long, sleek straight hair" loading="lazy" />
         </div>
       </div>
     </section>
@@ -123,7 +123,7 @@ export function About() {
 export function FreeDelivery() {
   return (
     <section className="delivery">
-      <img src={img('satin-waves.jpg')} alt="" className="delivery__bg" />
+      <img src={img('satin-waves.webp')} alt="" className="delivery__bg" />
       <div className="delivery__copy">
         <p className="script delivery__script">Free Delivery</p>
         <p className="display delivery__line">On orders over GH₵{FREE_DELIVERY.toLocaleString('en-US')}</p>
@@ -136,8 +136,8 @@ export function LuxuryBundles() {
   return (
     <section className="section" id="luxury-bundles">
       <div className="lux">
-        <img src={img('satin-folds.jpg')} alt="" className="lux__bg" />
-        <img src={img('col-curly.jpg')} alt="Model with voluminous curly hair" className="lux__model" />
+        <img src={img('satin-folds.webp')} alt="" className="lux__bg" />
+        <img src={img('col-curly.webp')} alt="Model with voluminous curly hair" className="lux__model" />
         <div className="lux__copy container">
           <p className="script lux__script">Luxury Collection</p>
           <h2 className="display lux__title">Luxury Bundles</h2>
@@ -158,8 +158,8 @@ export function LuxuryBundles() {
 export function PayLater() {
   return (
     <section className="paylater">
-      <img src={img('satin-shine.jpg')} alt="" className="paylater__bg" />
-      <img src={img('banner-slay.jpg')} alt="Model with a full afro" className="paylater__model" />
+      <img src={img('satin-shine.webp')} alt="" className="paylater__bg" />
+      <img src={img('banner-slay.webp')} alt="Model with a full afro" className="paylater__model" />
       <div className="paylater__copy">
         <p className="script paylater__script">Slay Now</p>
         <p className="display paylater__line">Pay Later</p>
@@ -228,8 +228,8 @@ export function Selfies() {
   return (
     <section className="selfies">
       <div className="selfies__hero">
-        <img src={img('satin-folds.jpg')} alt="" className="selfies__bg" />
-        <img src={img('selfie.jpg')} alt="Customer showing off her glowing look" className="selfies__model" />
+        <img src={img('satin-folds.webp')} alt="" className="selfies__bg" />
+        <img src={img('selfie.webp')} alt="Customer showing off her glowing look" className="selfies__model" />
         <div className="selfies__copy">
           <p className="script selfies__script">We Love Selfies!</p>
           <a href="#" className="selfies__handle">
@@ -242,7 +242,7 @@ export function Selfies() {
         {tiles.map((t) => (
           <li key={t}>
             <a href="#" aria-label={`View post on Instagram ${SOCIAL_HANDLE}`}>
-              <img src={img(`${t}.jpg`)} alt="" loading="lazy" />
+              <img src={img(`${t}.webp`)} alt="" loading="lazy" />
             </a>
           </li>
         ))}

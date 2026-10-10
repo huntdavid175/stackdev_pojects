@@ -4,7 +4,7 @@ import { img } from '../asset'
 export default function Hero() {
   return (
     <section className="hero">
-      <img className="hero__img" src={img('hero.jpg')} alt="Man with curly hair using a jade face roller" />
+      <img className="hero__img" src={img('hero.webp')} alt="Man with curly hair using a jade face roller" />
       <div className="hero__content">
         <p className="hero__eyebrow">Men care starts here</p>
         <h1 className="hero__title">

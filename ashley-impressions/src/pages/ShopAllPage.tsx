@@ -7,11 +7,11 @@ import { ArrowRight } from '../icons'
 import { img } from '../asset'
 
 const tiles = [
-  { title: 'Masks', handle: 'masks', img: 'ig-2.jpg' },
-  { title: 'Serums', handle: 'serums', img: 'promo-summer.jpg' },
-  { title: 'Hands & Body', handle: 'body-hands', img: 'menu-col-1.jpg' },
-  { title: 'Cleansers', handle: 'cleansers', img: 'promo-resilient.jpg' },
-  { title: 'Toners', handle: 'toners', img: 'ig-6.jpg' },
+  { title: 'Masks', handle: 'masks', img: 'ig-2.webp' },
+  { title: 'Serums', handle: 'serums', img: 'promo-summer.webp' },
+  { title: 'Hands & Body', handle: 'body-hands', img: 'menu-col-1.webp' },
+  { title: 'Cleansers', handle: 'cleansers', img: 'promo-resilient.webp' },
+  { title: 'Toners', handle: 'toners', img: 'ig-6.webp' },
 ]
 
 export default function ShopAllPage() {

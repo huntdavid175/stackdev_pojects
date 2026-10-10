@@ -43,7 +43,7 @@ const manifest = fs
     const { title, description } = readMeta(fs.readFileSync(index, 'utf8'))
     const images = path.join(ROOT, slug, 'dist', 'images')
     let cover = null
-    if (fs.existsSync(path.join(images, 'hero.jpg'))) cover = 'images/hero.jpg'
+    if (fs.existsSync(path.join(images, 'hero.webp'))) cover = 'images/hero.webp'
     else if (fs.existsSync(images)) {
       const first = fs.readdirSync(images).find((f) => /\.(jpe?g|png|webp)$/i.test(f))
       if (first) cover = `images/${first}`

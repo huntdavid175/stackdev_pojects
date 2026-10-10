@@ -264,7 +264,12 @@ function serveProject(req, res, slug, rest) {
   if (!target) return send(res, 404, 'Not found'), true
 
   const ext = path.extname(target).toLowerCase()
-  const cache = target.includes(`${path.sep}assets${path.sep}`) ? 'public, max-age=31536000, immutable' : 'no-cache'
+  // hashed build files never change; images keep their names, so cache a day and refresh in the background
+  const cache = target.includes(`${path.sep}assets${path.sep}`)
+    ? 'public, max-age=31536000, immutable'
+    : target.includes(`${path.sep}images${path.sep}`)
+      ? 'public, max-age=86400, stale-while-revalidate=604800'
+      : 'no-cache'
   res.writeHead(200, { 'Content-Type': MIME[ext] || 'application/octet-stream', 'Cache-Control': cache, 'X-Robots-Tag': 'noindex, nofollow' })
   if (req.method === 'HEAD') return res.end(), true
   fs.createReadStream(target).pipe(res)

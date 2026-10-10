@@ -11,7 +11,7 @@ export default function CollectionPage({ collection }: { collection: Collection 
   return (
     <>
       <section className="pbanner pbanner--collection">
-        <img src={img('satin-shine.jpg')} alt="" className="pbanner__bg" />
+        <img src={img('satin-shine.webp')} alt="" className="pbanner__bg" />
         <img src={img(collection.img)} alt="" className="pbanner__model" />
         <div className="pbanner__copy container">
           <nav className="crumbs" aria-label="Breadcrumb">

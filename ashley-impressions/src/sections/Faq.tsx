@@ -57,7 +57,7 @@ export default function Faq() {
         </div>
 
         <div className="faq__help">
-          <img src={img('faq.jpg')} alt="" loading="lazy" />
+          <img src={img('faq.webp')} alt="" loading="lazy" />
           <div className="faq__help-body">
             <h3 className="faq__help-title">Still need help?</h3>
             <p>Shoot our team an email &amp; we'll get back to you ASAP</p>
