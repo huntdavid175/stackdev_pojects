@@ -1,0 +1,9 @@
+{
+  "name": "preview-hub",
+  "private": true,
+  "type": "module",
+  "main": "server.mjs",
+  "engines": {
+    "node": ">=22"
+  }
+}

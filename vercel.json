@@ -1,0 +1,28 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "ashley-impressions": {
+      "root": "ashley-impressions",
+      "framework": "vite",
+      "buildCommand": "npm run build && rm -rf .vercel-out && mkdir -p .vercel-out && cp -r dist .vercel-out/ashley-impressions",
+      "outputDirectory": ".vercel-out",
+      "rewrites": [{ "source": "/ashley-impressions/(.*)", "destination": "/ashley-impressions/index.html" }]
+    },
+    "hair-by-gyeiwaa": {
+      "root": "hair-by-gyeiwaa",
+      "framework": "vite",
+      "buildCommand": "npm run build && rm -rf .vercel-out && mkdir -p .vercel-out && cp -r dist .vercel-out/hair-by-gyeiwaa",
+      "outputDirectory": ".vercel-out",
+      "rewrites": [{ "source": "/hair-by-gyeiwaa/(.*)", "destination": "/hair-by-gyeiwaa/index.html" }]
+    },
+    "hub": {
+      "root": "hub",
+      "entrypoint": "server.mjs"
+    }
+  },
+  "rewrites": [
+    { "source": "/ashley-impressions/(.*)", "destination": { "service": "ashley-impressions" } },
+    { "source": "/hair-by-gyeiwaa/(.*)", "destination": { "service": "hair-by-gyeiwaa" } },
+    { "source": "/(.*)", "destination": { "service": "hub" } }
+  ]
+}

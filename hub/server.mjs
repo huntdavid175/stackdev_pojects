@@ -3,26 +3,30 @@
 //   /                  -> project directory, locked behind an access code (checked server-side)
 //   /<project-name>/   -> that project's built site (public, so a prospect can open the link we send)
 //
-// Every folder next to this one that has a dist/index.html is listed automatically.
+// The directory lists the projects in projects.json, which `npm run build` (hub/build-all.mjs) regenerates.
+// Locally this server also serves each project's dist/; on Vercel the projects are separate services
+// (see ../vercel.json) and this file only handles /, /login and /logout.
 // Run `npm run build` in the repo root first, then `npm start`.
-// Config (env): HUB_CODE (default 1967), PORT (default 5174), HUB_SECRET (optional, keeps logins across restarts),
-//               HUB_TRUST_PROXY=1 when deployed behind a proxy/host that sets X-Forwarded-For.
+// Config (env): HUB_CODE (default 1967), PORT (default 5174), HUB_SECRET (recommended when hosted; signs the login cookie),
+//               HUB_TRUST_PROXY=1 when behind a proxy that sets X-Forwarded-For (automatic on Vercel).
 
 import http from 'node:http'
 import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
-import { fileURLToPath } from 'node:url'
+import { fileURLToPath, pathToFileURL } from 'node:url'
+import manifest from './projects.json' with { type: 'json' }
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const PORT = Number(process.env.PORT) || 5174
 const CODE = process.env.HUB_CODE || '1967'
-const SECRET = process.env.HUB_SECRET || crypto.randomBytes(32).toString('hex')
+// Serverless instances don't share memory, so the signing key must be stable: fall back to one derived from the code.
+const SECRET = process.env.HUB_SECRET || crypto.createHash('sha256').update(`hub-session:${CODE}`).digest('hex')
 const COOKIE = 'hub_session'
 const SESSION_DAYS = 7
 const MAX_ATTEMPTS = 5
 const LOCK_MS = 5 * 60 * 1000
-const TRUST_PROXY = process.env.HUB_TRUST_PROXY === '1'
+const TRUST_PROXY = process.env.HUB_TRUST_PROXY === '1' || Boolean(process.env.VERCEL)
 const SKIP = new Set(['hub', 'node_modules'])
 
 const MIME = {
@@ -97,32 +101,8 @@ const secureFlag = (req) => (req.headers['x-forwarded-proto'] === 'https' ? '; S
 
 // ---------- projects ----------
 
-function readMeta(html) {
-  const title = html.match(/<title>([^<]*)<\/title>/i)?.[1]?.trim()
-  const description = html.match(/<meta\s+name="description"\s+content="([^"]*)"/i)?.[1]?.trim()
-  return { title, description }
-}
-
 function listProjects() {
-  return fs
-    .readdirSync(ROOT, { withFileTypes: true })
-    .filter((d) => d.isDirectory() && !d.name.startsWith('.') && !SKIP.has(d.name))
-    .map((d) => {
-      const dist = path.join(ROOT, d.name, 'dist')
-      const index = path.join(dist, 'index.html')
-      if (!fs.existsSync(index)) return null
-      const { title, description } = readMeta(fs.readFileSync(index, 'utf8'))
-      const imagesDir = path.join(dist, 'images')
-      let cover = null
-      if (fs.existsSync(path.join(imagesDir, 'hero.jpg'))) cover = 'images/hero.jpg'
-      else if (fs.existsSync(imagesDir)) {
-        const first = fs.readdirSync(imagesDir).find((f) => /\.(jpe?g|png|webp)$/i.test(f))
-        if (first) cover = `images/${first}`
-      }
-      return { slug: d.name, title: title || d.name, description: description || '', cover, updated: fs.statSync(index).mtime }
-    })
-    .filter(Boolean)
-    .sort((a, b) => b.updated - a.updated)
+  return manifest.map((p) => ({ ...p, updated: new Date(p.updated) })).sort((a, b) => b.updated - a.updated)
 }
 
 // ---------- pages ----------
@@ -341,7 +321,12 @@ const server = http.createServer(async (req, res) => {
   html(res, 404, page('Not found', '<main style="padding:48px 24px;text-align:center"><h1>Page not found</h1><p>Check the link you were sent.</p></main>'))
 })
 
-server.listen(PORT, () => {
-  console.log(`Preview hub running at http://localhost:${PORT}/  (access code set${process.env.HUB_CODE ? ' via HUB_CODE' : ''})`)
-  for (const pr of listProjects()) console.log(`  /${pr.slug}/  ${pr.title}`)
-})
+// Vercel invokes the exported handler; locally, `node hub/server.mjs` starts a server.
+export default server.listeners('request')[0]
+
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  server.listen(PORT, () => {
+    console.log(`Preview hub running at http://localhost:${PORT}/  (access code set${process.env.HUB_CODE ? ' via HUB_CODE' : ''})`)
+    for (const pr of listProjects()) console.log(`  /${pr.slug}/  ${pr.title}`)
+  })
+}
