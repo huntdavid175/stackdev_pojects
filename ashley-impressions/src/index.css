@@ -29,6 +29,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overflow-x: clip;
+}
+
 html {
   -webkit-text-size-adjust: 100%;
 }
@@ -404,7 +409,7 @@ a.nav__link::after {
 
 .mega-shop {
   display: grid;
-  grid-template-columns: repeat(3, 1fr) 443px;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) 443px;
 }
 
 .mega-shop__col {
@@ -482,7 +487,7 @@ a.nav__link::after {
 
 .mega-cols {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 36px;
 }
 
@@ -599,7 +604,7 @@ a.nav__link::after {
 
 @media (max-width: 1100px) {
   .mega-shop {
-    grid-template-columns: repeat(3, 1fr) 340px;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) 340px;
   }
 }
 
@@ -709,7 +714,7 @@ a.nav__link::after {
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 6px;
 }
 
@@ -765,12 +770,14 @@ a.nav__link::after {
 }
 
 .product-card__price {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 14px;
   margin-top: 6px;
   font-size: 18px;
 }
 
 .product-card__price s {
-  margin-left: 14px;
   color: var(--muted);
 }
 
@@ -806,7 +813,7 @@ a.nav__link::after {
 /* ---------- 4. Promo tiles ---------- */
 .promo__grid {
   display: grid;
-  grid-template-columns: 600fr 791fr;
+  grid-template-columns: minmax(0, 600fr) minmax(0, 791fr);
   gap: clamp(24px, 5vw, 68px);
   align-items: center;
 }
@@ -899,7 +906,7 @@ a.nav__link::after {
 
 .collections__grid {
   display: grid;
-  grid-template-columns: 531fr 650fr;
+  grid-template-columns: minmax(0, 531fr) minmax(0, 650fr);
   gap: clamp(32px, 5vw, 60px);
   align-items: start;
   width: min(100% - 2 * var(--gutter), 1242px);
@@ -1027,7 +1034,7 @@ a.nav__link::after {
 
 .categories__grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 24px;
   align-items: start;
 }
@@ -1126,7 +1133,7 @@ a.nav__link::after {
 
 .sale {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   background: var(--brown);
   color: var(--white);
@@ -1176,7 +1183,7 @@ a.nav__link::after {
 
 .bundle__grid {
   display: grid;
-  grid-template-columns: 514fr 716fr;
+  grid-template-columns: minmax(0, 514fr) minmax(0, 716fr);
   gap: clamp(32px, 4vw, 48px);
   align-items: center;
   width: min(100% - 2 * var(--gutter), 1278px);
@@ -1299,7 +1306,7 @@ a.nav__link::after {
 
 .faq__grid {
   display: grid;
-  grid-template-columns: 785fr 421fr;
+  grid-template-columns: minmax(0, 785fr) minmax(0, 421fr);
   gap: clamp(32px, 7vw, 96px);
   align-items: center;
 }
@@ -1405,7 +1412,7 @@ a.nav__link::after {
 
 .ig__grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .ig__tile {
@@ -1690,7 +1697,7 @@ a.nav__link::after {
 
 .pdp__grid {
   display: grid;
-  grid-template-columns: 683fr 546fr;
+  grid-template-columns: minmax(0, 683fr) minmax(0, 546fr);
   gap: clamp(32px, 5.5vw, 72px);
   align-items: start;
 }
@@ -1750,7 +1757,7 @@ a.nav__link::after {
 
 .pdp-gallery__thumbs {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 7px;
   margin-top: 8px;
 }
@@ -2064,7 +2071,7 @@ a.nav__link::after {
 
 @media (max-width: 960px) {
   .pdp__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .pdp-gallery {
@@ -2421,7 +2428,7 @@ a.nav__link::after {
 
 .cart__buttons {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   gap: 10px;
   margin-top: 26px;
 }
@@ -2534,7 +2541,7 @@ a.nav__link::after {
 
 .col-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 40px 36px;
 }
 
@@ -2590,7 +2597,7 @@ a.nav__link::after {
 
 .type-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   border-top: 1px solid var(--line);
   border-left: 1px solid var(--line);
 }
@@ -2769,7 +2776,7 @@ a.nav__link::after {
 /* shop all */
 .shop-tiles {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   gap: 7px;
 }
 
@@ -2936,7 +2943,7 @@ a.nav__link::after {
 
 .fdrawer__foot {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   gap: 10px;
   padding: 18px 24px 24px;
   border-top: 1px solid var(--line);
@@ -2948,17 +2955,17 @@ a.nav__link::after {
 
 @media (max-width: 1100px) {
   .col-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .col-grid--wide {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 960px) {
   .col-layout {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     margin-top: 40px;
   }
 
@@ -2987,14 +2994,14 @@ a.nav__link::after {
   }
 
   .col-grid--wide {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 720px) {
   .col-grid,
   .col-grid--wide {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 32px 14px;
   }
 
@@ -3014,7 +3021,21 @@ a.nav__link::after {
     text-align: left;
   }
 
+  .col-toolbar__mobile,
+  .col-toolbar > .filter-btn,
+  .sort-select {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .filter-btn {
+    width: 100%;
+    justify-content: center;
+    padding-inline: 16px;
+  }
+
   .sort-select select {
+    width: 100%;
     min-width: 0;
   }
 
@@ -3026,29 +3047,29 @@ a.nav__link::after {
 /* ---------- Responsive ---------- */
 @media (max-width: 1100px) {
   .footer__top {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .footer__cols {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 960px) {
   .product-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 32px;
   }
 
   .categories__grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     row-gap: 32px;
   }
 
   .collections__grid,
   .bundle__grid,
   .faq__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .collections__media {
@@ -3064,7 +3085,7 @@ a.nav__link::after {
   }
 
   .ig__grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .ig__center {
@@ -3087,11 +3108,11 @@ a.nav__link::after {
   }
 
   .promo__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .sale {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 40px;
     padding-block: 56px;
   }
@@ -3103,14 +3124,30 @@ a.nav__link::after {
   }
 
   .categories__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 16px;
     row-gap: 28px;
   }
 
   .bundle__list li {
-    grid-template-columns: 32px 72px 1fr auto;
+    grid-template-columns: 32px 72px minmax(0, 1fr);
     column-gap: 14px;
+  }
+
+  .bundle__list li > .num-dot,
+  .bundle__thumb {
+    grid-row: span 2;
+  }
+
+  .bundle__price {
+    grid-column: 3;
+    margin-top: 4px;
+  }
+
+  .cart__buttons .btn-pill {
+    padding-inline: 12px;
+    font-size: 16px;
+    white-space: nowrap;
   }
 
   .bundle__thumb {
@@ -3130,7 +3167,7 @@ a.nav__link::after {
   }
 
   .ig__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .ig__center {
@@ -3138,7 +3175,7 @@ a.nav__link::after {
   }
 
   .footer__cols {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     row-gap: 36px;
   }
 

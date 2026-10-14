@@ -469,7 +469,7 @@ button {
 /* ---------- Collections (arches) ---------- */
 .arches {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(14px, 2.4vw, 32px);
 }
 
@@ -549,12 +549,12 @@ button {
 /* ---------- Product cards ---------- */
 .pgrid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 32px 14px;
 }
 
 .pgrid--five {
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(5, minmax(0, 1fr));
   margin-top: 14px;
 }
 
@@ -650,7 +650,7 @@ button {
 /* ---------- About ---------- */
 .about__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(32px, 6vw, 80px);
   align-items: center;
 }
@@ -772,7 +772,7 @@ button {
 .paylater {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   height: clamp(480px, 46vw, 640px);
   grid-template-rows: 100%;
@@ -859,7 +859,7 @@ button {
 
 .tcards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -951,7 +951,7 @@ button {
 .selfies__hero {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: center;
   height: clamp(480px, 46vw, 640px);
   grid-template-rows: 100%;
@@ -1005,7 +1005,7 @@ button {
 
 .igrid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
 }
 
 .igrid a {
@@ -1451,7 +1451,7 @@ button {
 }
 
 .pgrid--three {
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 8px;
 }
 
@@ -1593,7 +1593,7 @@ button {
 /* texture strands */
 .strands {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -1874,7 +1874,7 @@ button {
 /* gallery: one tall photo over two squares on desktop, swipe carousel on phones */
 .pgal__track {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 
@@ -2347,11 +2347,11 @@ button {
 /* ---------- Responsive ---------- */
 @media (max-width: 1080px) {
   .pgrid--three {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .pgrid--five {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -2364,7 +2364,7 @@ button {
   }
 
   .announce__inner {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     text-align: center;
   }
 
@@ -2386,11 +2386,11 @@ button {
   }
 
   .pgrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .listing {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     padding-top: 32px;
   }
 
@@ -2418,7 +2418,7 @@ button {
 
   .about__grid,
   .tcards {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .about__media {
@@ -2426,7 +2426,7 @@ button {
   }
 
   .footer__grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .footer__brand {
@@ -2435,7 +2435,7 @@ button {
   }
 
   .igrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -2457,12 +2457,12 @@ button {
   }
 
   .arches {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 18px;
   }
 
   .pgrid--five {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .pcard__btn {
@@ -2516,7 +2516,7 @@ button {
 
   .paylater,
   .selfies__hero {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     grid-template-rows: auto;
     height: auto;
   }
@@ -2548,9 +2548,23 @@ button {
     transform: none;
   }
 
+  .delivery__line {
+    margin-top: 0.2em;
+    line-height: 1.15;
+  }
+
+  .announce {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+
+  .announce__inner {
+    padding-block: 8px;
+  }
+
 
   .footer__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .footer__bottom {
