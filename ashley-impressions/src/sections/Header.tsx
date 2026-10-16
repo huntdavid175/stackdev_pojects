@@ -13,15 +13,15 @@ const CONTACT_URL = 'mailto:hello@ashleysimpression.com'
 
 const shopColumns = [
   { title: 'Categories', links: ['Serums', 'Cleansers', 'Toners', 'Body & Hands', 'Masks', 'Moisturizer', 'Shop All'] },
-  { title: 'Discover', links: ['Best Sellers', 'New Arrivals', 'Essential Routine', 'Oil Remover', 'Holiday Gifting'] },
-  { title: 'Featured', links: ['Power Couple Kit', 'Natural Body Wash', 'Bio-retinol Mask', 'Pure free oil cleanser'] },
+  { title: 'Discover', links: ['Bestsellers', 'New in', 'Korean skincare', 'Sun care', 'Gift ideas'] },
+  { title: 'Brands', links: ['Anua', 'Skin1004', 'Makari', 'Hatomugi', 'Veetgold', 'All brands'] },
 ]
 
 const collections = [
-  { title: 'New Arrivals', img: 'menu-col-1.webp' },
-  { title: 'Skincares', img: 'menu-col-2.webp' },
-  { title: 'On Sale', img: 'menu-col-3.webp' },
-  { title: 'Season Pick', img: 'menu-col-4.webp' },
+  { title: 'New in', img: 'menu-col-1.webp' },
+  { title: 'Korean skincare', img: 'menu-col-2.webp' },
+  { title: 'Body oils', img: 'menu-col-3.webp' },
+  { title: 'Sun care', img: 'menu-col-4.webp' },
 ]
 
 type NavItem = { id?: MenuId; label: string; href?: string }
@@ -52,8 +52,8 @@ function ShopPanel() {
       <Link href={linkFor('Serums')} className="mega-promo">
         <img src={img('menu-promo.webp')} alt="" />
         <div className="mega-promo__body">
-          <p className="mega-promo__title">Sensitive Skin</p>
-          <p className="mega-promo__text">Sustainability is well alive.</p>
+          <p className="mega-promo__title">Sensitive skin</p>
+          <p className="mega-promo__text">Gentle picks from Anua, Skin1004 and more.</p>
           <span className="mega-link">Shop now</span>
         </div>
       </Link>

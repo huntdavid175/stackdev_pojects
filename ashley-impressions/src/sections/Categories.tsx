@@ -15,7 +15,7 @@ export default function Categories() {
   return (
     <section className="section categories">
       <div className="container">
-        <h2 className="h2 categories__title">The Luxury of the Uncomplicated</h2>
+        <h2 className="h2 categories__title">Shop by category</h2>
         <ul className="categories__grid">
           {categories.map((c) => (
             <li key={c.name}>

@@ -5,20 +5,20 @@ export default function PromoTiles() {
   return (
     <section className="section promo">
       <div className="container container--narrow promo__grid">
-        <Link href="/collections/all" className="promo__summer">
+        <Link href="/collections/serums" className="promo__summer">
           <div className="promo__summer-media">
             <img src={img('promo-summer.webp')} alt="Serum bottle and dropper in soft light" loading="lazy" />
             <span className="promo__mark" aria-hidden="true">A.</span>
           </div>
-          <h3 className="promo__summer-title">Focus on Summer</h3>
+          <h3 className="promo__summer-title">Treatments for dark spots</h3>
           <span className="link-underline">Shop now</span>
         </Link>
 
         <div className="promo__feature">
           <img src={img('promo-resilient.webp')} alt="Woman with long braids holding a pink lip gloss" loading="lazy" />
           <div className="promo__feature-body">
-            <h3 className="promo__feature-title">For Naturally Resilient Skin</h3>
-            <Link href="/collections/moisturizer" className="btn-pill btn-pill--light">Shop now</Link>
+            <h3 className="promo__feature-title">Korean and Japanese favourites</h3>
+            <Link href="/collections/all" className="btn-pill btn-pill--light">Shop now</Link>
           </div>
         </div>
       </div>

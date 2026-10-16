@@ -12,8 +12,8 @@ export default function Newsletter() {
   return (
     <section className="section newsletter">
       <div className="container newsletter__inner">
-        <h2 className="h2">Join the Ashley's Impression Club</h2>
-        <p className="newsletter__sub">Subscribe for store updates and discounts.</p>
+        <h2 className="h2">Hear about restocks first</h2>
+        <p className="newsletter__sub">Get an email when new brands arrive, favourites come back in stock or a sale starts.</p>
         {done ? (
           <p className="newsletter__done" role="status">You're subscribed. Check your inbox for a welcome email.</p>
         ) : (

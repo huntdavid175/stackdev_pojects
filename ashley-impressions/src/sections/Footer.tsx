@@ -5,8 +5,8 @@ import { img } from '../asset'
 
 const columns = [
   { title: 'Collections', links: ['Body Care', 'Cleansers', 'Serums', 'Skincare', 'Moisturizer'] },
-  { title: 'About', links: ['Contact', 'Blog', 'About', 'FAQs', 'Find a store'] },
-  { title: 'Shop', links: ['Shop All', 'Sale', 'Lookbook', 'Basic Collection'] },
+  { title: 'Help', links: ['Contact us', 'Delivery', 'Returns', 'FAQs', 'Visit the shop'] },
+  { title: 'Shop', links: ['Shop All', 'Brands', 'New in', 'Sale'] },
 ]
 
 const socials = [
@@ -23,7 +23,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__top">
           <p className="footer__statement">
-            We use natural skincare ingredients to keep your skin smooth and hydrated
+            Skincare and body care from the brands you trust, all in one shop in Ghana
           </p>
           <nav className="footer__cols" aria-label="Footer">
             {columns.map((col) => (
@@ -31,7 +31,7 @@ export default function Footer() {
                 <h2 className="footer__head">{col.title}</h2>
                 <ul>
                   {col.links.map((l) => (
-                    <li key={l}>{col.title === 'About' ? <a href="#">{l}</a> : <Link href={linkFor(l)}>{l}</Link>}</li>
+                    <li key={l}>{col.title === 'Help' ? <a href="#">{l}</a> : <Link href={linkFor(l)}>{l}</Link>}</li>
                   ))}
                 </ul>
               </div>

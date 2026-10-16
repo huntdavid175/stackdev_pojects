@@ -12,7 +12,8 @@ const gallery = [
   { src: 'pdp-5.webp', alt: 'Hands being rinsed under a tap' },
 ]
 
-const PRODUCT = 'Anua Heartleaf Quercetinol pore deep cleansing foam'
+const BRAND = 'Anua'
+const PRODUCT = 'Heartleaf Quercetinol pore deep cleansing foam'
 
 const sizes: { label: string; price: number; compareAt?: number }[] = [{ label: '150ml', price: 250 }]
 
@@ -25,7 +26,7 @@ const upsells = [
 const details = [
   {
     title: 'Core features',
-    body: 'A low-pH Korean foam cleanser that lathers into a soft, dense foam to lift away sebum, sunscreen and the day’s grime from deep in the pores, without leaving skin tight. Gentle enough for morning and evening use.',
+    body: 'Anua’s low-pH Korean foam cleanser that lathers into a soft, dense foam to lift away sebum, sunscreen and the day’s grime from deep in the pores, without leaving skin tight. Gentle enough for morning and evening use.',
   },
   {
     title: 'Ingredients',
@@ -33,15 +34,15 @@ const details = [
   },
   {
     title: 'Shipping & return',
-    body: 'Free delivery across Ghana on orders over GH₵600, delivered in 2-4 business days. Unopened products can be returned within 30 days for a full refund or exchange.',
+    body: 'Free delivery across Ghana on orders over GH₵600, usually within 1-3 business days. Unopened products can be returned within 30 days for a refund or exchange.',
   },
 ]
 
-const related: { name: string; img: string; price: number; compareAt?: number; badge?: string }[] = [
-  { name: 'Skin1004 Madagascar Centella soothing cream', img: 'products/centella-soothing-cream.webp', price: 290, badge: 'New' },
-  { name: 'Turmeric & Carrot exfoliating shower gel', img: 'products/exfoliating-shower-gel.webp', price: 140 },
-  { name: 'Hatomugi UV milky gel SPF50+', img: 'products/hatomugi-uv-gel.webp', price: 200 },
-  { name: 'Makari Extreme Argan & Carrot Oil toning glycerin', img: 'products/makari-toning-glycerin.webp', price: 800 },
+const related: { brand: string; name: string; img: string; price: number; compareAt?: number; badge?: string }[] = [
+  { brand: 'Skin1004', name: 'Madagascar Centella soothing cream', img: 'products/centella-soothing-cream.webp', price: 290, badge: 'New' },
+  { brand: '7 Days', name: 'Turmeric & Carrot exfoliating shower gel', img: 'products/exfoliating-shower-gel.webp', price: 140 },
+  { brand: 'Hatomugi', name: 'UV milky gel SPF50+', img: 'products/hatomugi-uv-gel.webp', price: 200 },
+  { brand: 'Makari', name: 'Extreme Argan & Carrot Oil toning glycerin', img: 'products/makari-toning-glycerin.webp', price: 800 },
 ]
 
 const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
@@ -134,6 +135,7 @@ export default function ProductPage() {
           <Gallery />
 
           <div className="pdp__info">
+            <p className="pdp__brand">{BRAND}</p>
             <h1 className="pdp__title">{PRODUCT}</h1>
             <div className="pdp__price">
               <span>{money(v.price)}</span>
@@ -179,7 +181,7 @@ export default function ProductPage() {
             <button
               className="btn-pill btn-pill--dark btn-pill--block pdp__atc"
               onClick={() => {
-                addToCart({ name: PRODUCT, img: 'products/anua-heartleaf-foam.webp', price: v.price, variant: v.label })
+                addToCart({ name: `${BRAND} ${PRODUCT}`, img: 'products/anua-heartleaf-foam.webp', price: v.price, variant: v.label })
                 setAdded(true)
               }}
             >
@@ -189,7 +191,7 @@ export default function ProductPage() {
             <div className="pdp__pickup">
               <Check />
               <div>
-                <p>Pickup available at Ashley's Impression Studio</p>
+                <p>Pickup available at the Ashley's Impression shop</p>
                 <p>Usually ready in 24 hours</p>
                 <a href="#" className="pdp__store-link">View Store Information</a>
               </div>
@@ -197,7 +199,7 @@ export default function ProductPage() {
 
             <ul className="pdp__perks">
               <li><TruckIcon /> Estimated delivery: {deliveryWindow()}</li>
-              <li><BoxIcon /> Money back within 30 days for an exchange.</li>
+              <li><BoxIcon /> Unopened products can be returned within 30 days.</li>
             </ul>
 
             <UpsellCarousel title="Buy it with" items={upsells} />
@@ -222,6 +224,7 @@ export default function ProductPage() {
                     <img src={img(p.img)} alt={p.name} loading="lazy" />
                     {p.badge && <span className={`badge badge--${p.badge === 'New' ? 'new' : 'sale'}`}>{p.badge}</span>}
                   </div>
+                  <p className="product-card__brand">{p.brand}</p>
                   <h3 className="product-card__name">{p.name}</h3>
                   <p className="product-card__price">
                     {money(p.price)}

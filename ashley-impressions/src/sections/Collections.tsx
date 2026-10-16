@@ -4,18 +4,18 @@ import { img } from '../asset'
 
 const items = [
   {
-    title: 'Skincare For Beach',
-    text: 'Water-resistant protection and after-sun care that keeps up with long days in the sun, salt and sand.',
+    title: 'Glow and even tone',
+    text: 'Vitamin C oils, carrot and argan formulas and brightening lotions for dark spots and uneven skin tone.',
     img: 'collections.webp',
   },
   {
-    title: 'Detox Skin Nights',
-    text: 'Clarifying cleansers and overnight masks that clear the day away while you sleep.',
+    title: 'Clear, calm skin',
+    text: 'Gentle foam cleansers and centella creams that clear pores and soothe irritation.',
     img: 'promo-resilient.webp',
   },
   {
-    title: 'Summer Treatments',
-    text: 'Keep your skin fresh and hydrated with lightweight, soothing formulas perfect for warm, sunny days and balmy nights.',
+    title: 'Sun protection',
+    text: 'Daily SPF for face and body, including a sunscreen for kids, for strong Ghana sun.',
     img: 'collections.webp',
   },
 ]
@@ -41,11 +41,11 @@ export default function Collections() {
     <section id="collections" className="collections">
       <div className="container collections__grid">
         <div className="collections__copy">
-          <p className="eyebrow">Our collections</p>
+          <p className="eyebrow">Shop by concern</p>
           <h2 className="h-serif">
-            Time to achieve
+            Find what your
             <br />
-            <em>more with less</em>
+            <em>skin needs</em>
           </h2>
 
           <ol className="collections__list">

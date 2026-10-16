@@ -5,6 +5,7 @@ export type Badge = { label: string; tone: 'sale' | 'new' | 'best' }
 
 export type Product = {
   id: string
+  brand: string
   name: string
   img: string
   price: number
@@ -20,26 +21,27 @@ export const SIZES = ['75ml', '89ml', '125ml', '150ml', '250ml', '280ml', '350ml
 
 const p = (
   id: string,
+  brand: string,
   name: string,
   img: string,
   price: number,
   type: ProductType,
   sizes: string[],
   extra: Partial<Product> = {},
-): Product => ({ id, name, img, price, type, sizes, added: 30, sales: 10, ...extra })
+): Product => ({ id, brand, name, img, price, type, sizes, added: 30, sales: 10, ...extra })
 
 export const products: Product[] = [
-  p('anua-heartleaf-cleansing-foam', 'Anua Heartleaf Quercetinol pore deep cleansing foam', 'products/anua-heartleaf-foam.webp', 250, 'Cleansers', ['150ml'], { badge: 'best', sales: 96 }),
-  p('skin1004-centella-soothing-cream', 'Skin1004 Madagascar Centella soothing cream', 'products/centella-soothing-cream.webp', 290, 'Moisturizer', ['75ml'], { badge: 'new', added: 3, sales: 40 }),
-  p('makari-toning-glycerin', 'Makari Extreme Argan & Carrot Oil toning glycerin', 'products/makari-toning-glycerin.webp', 800, 'Toners', ['500ml'], { sales: 58 }),
-  p('makari-botanical-body-oil', 'Makari Extreme Argan & Carrot botanical body oil', 'products/makari-body-oil.webp', 400, 'Body & Hands', ['125ml'], { badge: 'best', sales: 88 }),
-  p('hatomugi-uv-milky-gel', 'Hatomugi UV milky gel SPF50+', 'products/hatomugi-uv-gel.webp', 200, 'Moisturizer', ['250ml'], { sales: 64 }),
-  p('advanced-korean-skin-body-oil', 'Advanced Korean Skin body oil', 'products/korean-body-oil.webp', 150, 'Body & Hands', ['280ml'], { badge: 'new', added: 2, sales: 52 }),
-  p('veetgold-vitamin-c-body-oil', 'Veetgold Vitamin C body corrector oil', 'products/veetgold-vitamin-c-oil.webp', 170, 'Body & Hands', ['1000ml'], { sales: 77 }),
-  p('bismid-clear-glow-lotion', 'Bismid Clear & Glow whitening lotion', 'products/bismid-whitening-lotion.webp', 200, 'Body & Hands', ['350ml'], { sales: 45 }),
-  p('exfoliating-shower-gel', 'Turmeric & Carrot exfoliating shower gel', 'products/exfoliating-shower-gel.webp', 140, 'Cleansers', ['1000ml'], { sales: 70, added: 12 }),
-  p('black-girl-sunscreen-kids', 'Black Girl Sunscreen Kids SPF 50', 'products/bgs-kids-sunscreen.webp', 220, 'Moisturizer', ['89ml'], { sales: 33, added: 8 }),
-  p('youtheory-collagen-biotin', 'Youtheory Collagen + Biotin, 390 tablets', 'products/youtheory-collagen.webp', 480, 'Supplements', ['390 tablets'], { sales: 61 }),
+  p('anua-heartleaf-cleansing-foam', 'Anua', 'Heartleaf Quercetinol pore deep cleansing foam', 'products/anua-heartleaf-foam.webp', 250, 'Cleansers', ['150ml'], { badge: 'best', sales: 96 }),
+  p('skin1004-centella-soothing-cream', 'Skin1004', 'Madagascar Centella soothing cream', 'products/centella-soothing-cream.webp', 290, 'Moisturizer', ['75ml'], { badge: 'new', added: 3, sales: 40 }),
+  p('makari-toning-glycerin', 'Makari', 'Extreme Argan & Carrot Oil toning glycerin', 'products/makari-toning-glycerin.webp', 800, 'Toners', ['500ml'], { sales: 58 }),
+  p('makari-botanical-body-oil', 'Makari', 'Extreme Argan & Carrot botanical body oil', 'products/makari-body-oil.webp', 400, 'Body & Hands', ['125ml'], { badge: 'best', sales: 88 }),
+  p('hatomugi-uv-milky-gel', 'Hatomugi', 'UV milky gel SPF50+', 'products/hatomugi-uv-gel.webp', 200, 'Moisturizer', ['250ml'], { sales: 64 }),
+  p('advanced-korean-skin-body-oil', 'Advanced Korean Skin', 'Brightening body oil', 'products/korean-body-oil.webp', 150, 'Body & Hands', ['280ml'], { badge: 'new', added: 2, sales: 52 }),
+  p('veetgold-vitamin-c-body-oil', 'Veetgold', 'Vitamin C body corrector oil', 'products/veetgold-vitamin-c-oil.webp', 170, 'Body & Hands', ['1000ml'], { sales: 77 }),
+  p('bismid-clear-glow-lotion', 'Bismid', 'Clear & Glow lotion', 'products/bismid-whitening-lotion.webp', 200, 'Body & Hands', ['350ml'], { sales: 45 }),
+  p('exfoliating-shower-gel', '7 Days', 'Turmeric & Carrot exfoliating shower gel', 'products/exfoliating-shower-gel.webp', 140, 'Cleansers', ['1000ml'], { sales: 70, added: 12 }),
+  p('black-girl-sunscreen-kids', 'Black Girl Sunscreen', 'Kids moisturizing sunscreen SPF 50', 'products/bgs-kids-sunscreen.webp', 220, 'Moisturizer', ['89ml'], { sales: 33, added: 8 }),
+  p('youtheory-collagen-biotin', 'Youtheory', 'Collagen + Biotin, 390 tablets', 'products/youtheory-collagen.webp', 480, 'Supplements', ['390 tablets'], { sales: 61 }),
 ]
 
 export type Collection = { handle: string; title: string; description: string; banner: string; types: ProductType[] }
@@ -48,42 +50,42 @@ export const collections: Collection[] = [
   {
     handle: 'serums',
     title: 'Serums',
-    description: 'Power up your routine with serums packed with potent ingredients for hydration, glow, and repair.',
+    description: 'Targeted treatments and glow oils for dark spots, dullness and uneven tone, from brands we trust.',
     banner: 'banner-serums.webp',
     types: ['Serums', 'Toners', 'Body & Hands', 'Moisturizer'],
   },
   {
     handle: 'cleansers',
     title: 'Cleansers',
-    description: 'Gentle washes, oils and micellar waters that lift the day away without stripping your skin.',
+    description: 'Foam cleansers and shower gels that clear pores and lift the day away without stripping your skin.',
     banner: 'banner-cleansers.webp',
     types: ['Cleansers', 'Toners'],
   },
   {
     handle: 'toners',
     title: 'Toners',
-    description: 'Balancing toners that refine pores and prep skin to drink in everything that follows.',
+    description: 'Toners and toning glycerins that even out skin tone and prep it for what comes next.',
     banner: 'promo-summer.webp',
     types: ['Toners', 'Serums'],
   },
   {
     handle: 'body-hands',
     title: 'Body & Hands',
-    description: 'Rich creams, washes and butters for soft, comfortable skin from shoulders to fingertips.',
+    description: 'Body oils, lotions and washes that brighten and soften skin from shoulders to toes.',
     banner: 'faq.webp',
     types: ['Body & Hands', 'Moisturizer'],
   },
   {
     handle: 'masks',
     title: 'Masks',
-    description: 'Weekly treatments that clarify, calm and restore — ten minutes well spent.',
+    description: 'Deep cleansers and weekly treatments that clarify and calm.',
     banner: 'collections.webp',
     types: ['Masks', 'Cleansers', 'Toners'],
   },
   {
     handle: 'moisturizer',
     title: 'Moisturizer',
-    description: 'Daily hydration for every skin type, from featherlight gels to cushioning creams.',
+    description: 'Soothing creams, light gels and daily SPF for every skin type.',
     banner: 'promo-resilient.webp',
     types: ['Moisturizer', 'Body & Hands'],
   },
@@ -91,7 +93,7 @@ export const collections: Collection[] = [
 
 export const SHOP_ALL = {
   title: 'Shop All',
-  description: 'Explore our full collection of beauty essentials, from skincare to body care and more.',
+  description: 'Every brand we stock in one place, from Korean skincare to body oils, sunscreen and supplements.',
 }
 
 export const findCollection = (handle: string) => collections.find((c) => c.handle === handle)

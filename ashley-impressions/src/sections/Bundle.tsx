@@ -3,26 +3,24 @@ import { ChevronDown } from '../icons'
 import { addToCart } from '../cart'
 import { img } from '../asset'
 
-type Item = { name: string; img: string; sizes: { label: string; price: number }[]; spot: { x: number; y: number } }
+type Item = { name: string; img: string; sizes: { label: string; price: number }[] }
 
+// A three-step routine built from products the shop stocks.
 const items: Item[] = [
   {
-    name: 'Hyaluronic sea serum',
-    img: 'bundle-1.webp',
-    sizes: [{ label: '30ml', price: 1560 }, { label: '50ml', price: 2160 }],
-    spot: { x: 30, y: 51 },
+    name: 'Anua Heartleaf pore deep cleansing foam',
+    img: 'products/anua-heartleaf-foam.webp',
+    sizes: [{ label: '150ml', price: 250 }],
   },
   {
-    name: 'Ultimate Facelift Day Cream',
-    img: 'bundle-2.webp',
-    sizes: [{ label: '45ml', price: 360 }, { label: '90ml', price: 625 }],
-    spot: { x: 50, y: 62 },
+    name: 'Makari Argan & Carrot toning glycerin',
+    img: 'products/makari-toning-glycerin.webp',
+    sizes: [{ label: '500ml', price: 800 }],
   },
   {
-    name: 'Ultimate Blanca Hair Oil',
-    img: 'bundle-3.webp',
-    sizes: [{ label: '45ml', price: 360 }, { label: '90ml', price: 625 }],
-    spot: { x: 68, y: 61 },
+    name: 'Hatomugi UV milky gel SPF50+',
+    img: 'products/hatomugi-uv-gel.webp',
+    sizes: [{ label: '250ml', price: 200 }],
   },
 ]
 
@@ -42,9 +40,9 @@ export default function Bundle() {
     <section className="section bundle">
       <div className="container bundle__grid">
         <div className="bundle__copy">
-          <p className="eyebrow">Product bundle</p>
+          <p className="eyebrow">Daily routine</p>
           <h2 className="h-serif">
-            Favorite <em>Packs</em>
+            Cleanse, tone, <em>protect</em>
           </h2>
 
           <ol className="bundle__list">
@@ -59,15 +57,19 @@ export default function Bundle() {
                 <img src={img(item.img)} alt="" className="bundle__thumb" loading="lazy" />
                 <div className="bundle__info">
                   <p className="bundle__name">{item.name}</p>
-                  <label className="bundle__size">
-                    <span className="sr-only">Size for {item.name}</span>
-                    <select value={sizes[i]} onChange={(e) => setSize(i, Number(e.target.value))}>
-                      {item.sizes.map((s, si) => (
-                        <option key={s.label} value={si}>{s.label}</option>
-                      ))}
-                    </select>
-                    <ChevronDown />
-                  </label>
+                  {item.sizes.length === 1 ? (
+                    <p className="bundle__size-text">{item.sizes[0].label}</p>
+                  ) : (
+                    <label className="bundle__size">
+                      <span className="sr-only">Size for {item.name}</span>
+                      <select value={sizes[i]} onChange={(e) => setSize(i, Number(e.target.value))}>
+                        {item.sizes.map((s, si) => (
+                          <option key={s.label} value={si}>{s.label}</option>
+                        ))}
+                      </select>
+                      <ChevronDown />
+                    </label>
+                  )}
                 </div>
                 <p className="bundle__price">{money(item.sizes[sizes[i]].price)}</p>
               </li>
@@ -87,19 +89,7 @@ export default function Bundle() {
         </div>
 
         <div className="bundle__media">
-          <img src={img('bundle.webp')} alt="Three amber serum bottles on a stone plinth" loading="lazy" />
-          {items.map((item, i) => (
-            <span
-              key={item.name}
-              className={`hotspot${hover === i ? ' is-active' : ''}`}
-              style={{ left: `${item.spot.x}%`, top: `${item.spot.y}%` }}
-              onMouseEnter={() => setHover(i)}
-              onMouseLeave={() => setHover(null)}
-              aria-hidden="true"
-            >
-              {i + 1}
-            </span>
-          ))}
+          <img src={img('bundle.webp')} alt="Three women each holding a skincare product" loading="lazy" />
         </div>
       </div>
     </section>

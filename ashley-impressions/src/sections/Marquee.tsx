@@ -1,4 +1,4 @@
-const perks = ['Free Shipping', '30 Days Free Returns', 'Fast Delivery', 'Secure Payment']
+const perks = ['Authentic products', 'Delivery across Ghana', 'Free delivery over GH₵600', '30-day returns']
 
 function Row({ hidden }: { hidden?: boolean }) {
   return (

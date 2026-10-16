@@ -3,20 +3,20 @@ import { Link, PRODUCT_URL } from '../router'
 import { img } from '../asset'
 
 type Badge = { label: string; tone: 'sale' | 'new' | 'best' }
-type Product = { name: string; img: string; price: number; compareAt?: number; badge?: Badge }
+type Product = { brand: string; name: string; img: string; price: number; compareAt?: number; badge?: Badge }
 
 const products: Record<'skin' | 'body', Product[]> = {
   skin: [
-    { name: 'Anua Heartleaf pore deep cleansing foam', img: 'products/anua-heartleaf-foam.webp', price: 250, badge: { label: 'Bestseller', tone: 'best' } },
-    { name: 'Skin1004 Centella soothing cream', img: 'products/centella-soothing-cream.webp', price: 290, badge: { label: 'New', tone: 'new' } },
-    { name: 'Hatomugi UV milky gel SPF50+', img: 'products/hatomugi-uv-gel.webp', price: 200 },
-    { name: 'Makari Argan & Carrot toning glycerin', img: 'products/makari-toning-glycerin.webp', price: 800 },
+    { brand: 'Anua', name: 'Heartleaf pore deep cleansing foam', img: 'products/anua-heartleaf-foam.webp', price: 250, badge: { label: 'Bestseller', tone: 'best' } },
+    { brand: 'Skin1004', name: 'Madagascar Centella soothing cream', img: 'products/centella-soothing-cream.webp', price: 290, badge: { label: 'New', tone: 'new' } },
+    { brand: 'Hatomugi', name: 'UV milky gel SPF50+', img: 'products/hatomugi-uv-gel.webp', price: 200 },
+    { brand: 'Makari', name: 'Argan & Carrot toning glycerin', img: 'products/makari-toning-glycerin.webp', price: 800 },
   ],
   body: [
-    { name: 'Makari Argan & Carrot body oil', img: 'products/makari-body-oil.webp', price: 400, badge: { label: 'Bestseller', tone: 'best' } },
-    { name: 'Advanced Korean Skin body oil', img: 'products/korean-body-oil.webp', price: 150, badge: { label: 'New', tone: 'new' } },
-    { name: 'Veetgold Vitamin C body corrector oil', img: 'products/veetgold-vitamin-c-oil.webp', price: 170 },
-    { name: 'Bismid Clear & Glow whitening lotion', img: 'products/bismid-whitening-lotion.webp', price: 200 },
+    { brand: 'Makari', name: 'Argan & Carrot botanical body oil', img: 'products/makari-body-oil.webp', price: 400, badge: { label: 'Bestseller', tone: 'best' } },
+    { brand: 'Advanced Korean Skin', name: 'Brightening body oil', img: 'products/korean-body-oil.webp', price: 150, badge: { label: 'New', tone: 'new' } },
+    { brand: 'Veetgold', name: 'Vitamin C body corrector oil', img: 'products/veetgold-vitamin-c-oil.webp', price: 170 },
+    { brand: 'Bismid', name: 'Clear & Glow lotion', img: 'products/bismid-whitening-lotion.webp', price: 200 },
   ],
 }
 
@@ -29,7 +29,7 @@ export default function FeaturedProducts() {
     <section id="featured" className="section featured">
       <div className="container container--wide">
         <div className="featured__head">
-          <h2 className="h2">Featured Products</h2>
+          <h2 className="h2">Bestsellers this week</h2>
           <div className="tabs" role="tablist" aria-label="Product category">
             {(['skin', 'body'] as const).map((t) => (
               <button
@@ -53,6 +53,7 @@ export default function FeaturedProducts() {
                   <img src={img(p.img)} alt={p.name} loading="lazy" />
                   {p.badge && <span className={`badge badge--${p.badge.tone}`}>{p.badge.label}</span>}
                 </div>
+                <p className="product-card__brand">{p.brand}</p>
                 <h3 className="product-card__name">{p.name}</h3>
                 <p className="product-card__price">
                   {money(p.price)}

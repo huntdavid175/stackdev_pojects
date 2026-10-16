@@ -10,6 +10,7 @@ export default function ProductCard({ product }: { product: Product }) {
         <img src={img(product.img)} alt={product.name} loading="lazy" />
         {badge && <span className={`badge badge--${badge.tone}`}>{badge.label}</span>}
       </div>
+      <p className="product-card__brand">{product.brand}</p>
       <h3 className="product-card__name">{product.name}</h3>
       <p className="product-card__price">
         {money(product.price)}

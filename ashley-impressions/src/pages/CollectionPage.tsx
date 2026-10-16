@@ -17,7 +17,7 @@ export default function CollectionPage({ handle }: { handle: string }) {
       <nav className="breadcrumbs breadcrumbs--center" aria-label="Breadcrumb">
         <ol>
           <li><Link href="/">Home</Link></li>
-          <li><Link href="/collections/all">Collection</Link></li>
+          <li><Link href="/collections/all">Shop all</Link></li>
           <li aria-current="page">{collection.title}</li>
         </ol>
       </nav>
