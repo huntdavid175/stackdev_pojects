@@ -1,19 +1,6 @@
 import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'react'
-import {
-  FREE_SHIPPING_AT,
-  GIFT_WRAP_PRICE,
-  applyDiscount,
-  clearDiscount,
-  closeCart,
-  removeLine,
-  setGiftWrap,
-  setNote,
-  setQty,
-  totals,
-  useCart,
-} from '../cart'
+import { FREE_SHIPPING_AT, addToCart, applyDiscount, clearDiscount, closeCart, removeLine, setQty, totals, useCart } from '../cart'
 import { CloseIcon, Plus } from '../icons'
-import UpsellCarousel from './UpsellCarousel'
 import { img } from '../asset'
 
 const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
@@ -105,6 +92,7 @@ export default function CartDrawer() {
 
   const remaining = Math.max(0, FREE_SHIPPING_AT - t.items)
   const progress = Math.min(100, (t.items / FREE_SHIPPING_AT) * 100)
+  const recs = recommendations.filter((r) => !cart.lines.some((l) => l.name === r.name))
 
   return (
     <div className={`cart${cart.open ? ' is-open' : ''}`} aria-hidden={!cart.open}>
@@ -144,51 +132,50 @@ export default function CartDrawer() {
                   <li key={l.id} className="cart-line">
                     <img src={img(l.img)} alt="" />
                     <div className="cart-line__info">
-                      <p className="cart-line__name">{l.name}</p>
-                      {l.variant && <p className="cart-line__variant">Size: {l.variant}</p>}
-                      <div className="qty">
-                        <button aria-label={`Decrease quantity of ${l.name}`} onClick={() => setQty(l.id, l.qty - 1)}>
-                          <Minus />
-                        </button>
-                        <span aria-live="polite" aria-label={`Quantity ${l.qty}`}>{l.qty}</span>
-                        <button aria-label={`Increase quantity of ${l.name}`} onClick={() => setQty(l.id, l.qty + 1)}>
-                          <Plus open={false} />
-                        </button>
+                      <div className="cart-line__top">
+                        <p className="cart-line__name">{l.name}</p>
+                        <p className="cart-line__price">{money(l.price * l.qty)}</p>
                       </div>
-                    </div>
-                    <div className="cart-line__side">
-                      <p className="cart-line__price">{money(l.price * l.qty)}</p>
-                      <button className="link-btn" onClick={() => removeLine(l.id)}>Remove</button>
+                      {l.variant && <p className="cart-line__variant">{l.variant}</p>}
+                      <div className="cart-line__actions">
+                        <div className="qty">
+                          <button aria-label={`Decrease quantity of ${l.name}`} onClick={() => setQty(l.id, l.qty - 1)}>
+                            <Minus />
+                          </button>
+                          <span aria-live="polite" aria-label={`Quantity ${l.qty}`}>{l.qty}</span>
+                          <button aria-label={`Increase quantity of ${l.name}`} onClick={() => setQty(l.id, l.qty + 1)}>
+                            <Plus open={false} />
+                          </button>
+                        </div>
+                        <button className="link-btn" onClick={() => removeLine(l.id)}>Remove</button>
+                      </div>
                     </div>
                   </li>
                 ))}
               </ul>
 
-              <UpsellCarousel
-                title="You may also like"
-                titleClass="cart__subtitle"
-                items={recommendations.filter((r) => !cart.lines.some((l) => l.name === r.name))}
-              />
+              {recs.length > 0 && (
+                <div className="cart-recs">
+                  <h3 className="cart__subtitle">Add to your order</h3>
+                  <ul className="cart-recs__list">
+                    {recs.map((r) => (
+                      <li key={r.name} className="cart-rec">
+                        <img src={img(r.img)} alt="" />
+                        <div>
+                          <p className="cart-rec__name">{r.name}</p>
+                          <p className="cart-rec__price">{money(r.price)}</p>
+                        </div>
+                        <button className="cart-rec__add" aria-label={`Add ${r.name} to cart`} onClick={() => addToCart(r)}>
+                          <Plus open={false} />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
 
             <div className="cart__foot">
-              <label className="cart-wrap">
-                <input type="checkbox" checked={cart.giftWrap} onChange={(e) => setGiftWrap(e.target.checked)} />
-                <span>For {money(GIFT_WRAP_PRICE)} please wrap the products in this order.</span>
-              </label>
-
-              <Expander label="Add order note">
-                <label htmlFor="cart-note" className="sr-only">Order note</label>
-                <textarea
-                  id="cart-note"
-                  className="cart-note"
-                  rows={3}
-                  value={cart.note}
-                  onChange={(e) => setNote(e.target.value)}
-                  placeholder="Special instructions for your order"
-                />
-              </Expander>
-
               <Expander label="Add discount code">
                 <DiscountForm />
               </Expander>
@@ -200,23 +187,16 @@ export default function CartDrawer() {
                     <span>-{money(t.discount)}</span>
                   </p>
                 )}
-                {t.wrap > 0 && (
-                  <p className="cart-total__row cart-total__row--muted">
-                    <span>Gift wrap</span>
-                    <span>{money(t.wrap)}</span>
-                  </p>
-                )}
                 <p className="cart-total__row">
-                  <span>Subtotal:</span>
+                  <span>Subtotal</span>
                   <span>{money(t.subtotal)}</span>
                 </p>
                 <p className="cart-total__note">Taxes and shipping calculated at checkout</p>
               </div>
 
-              <div className="cart__buttons">
-                <button className="btn-pill btn-pill--sand" onClick={closeCart}>View cart</button>
-                <button className="btn-pill btn-pill--dark" onClick={() => setCheckoutMsg(true)}>Check out</button>
-              </div>
+              <button className="btn-pill btn-pill--dark btn-pill--block cart__checkout" onClick={() => setCheckoutMsg(true)}>
+                Check out
+              </button>
               {checkoutMsg && (
                 <p className="cart-hint cart-hint--center" role="status">
                   Checkout opens Shopify's secure checkout in the live store.
