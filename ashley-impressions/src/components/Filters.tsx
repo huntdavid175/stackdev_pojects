@@ -11,6 +11,7 @@ import {
   type SortId,
 } from '../catalog'
 import { ChevronDown, CloseIcon } from '../icons'
+import { lockScroll, unlockScroll } from '../scrollLock'
 
 // ---- state hook shared by the collection + shop-all pages ----
 
@@ -226,11 +227,11 @@ export function FilterDrawer(props: {
 
   useEffect(() => {
     if (!open) return
-    document.body.style.overflow = 'hidden'
+    lockScroll()
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose()
     document.addEventListener('keydown', onKey)
     return () => {
-      document.body.style.overflow = ''
+      unlockScroll()
       document.removeEventListener('keydown', onKey)
     }
   }, [open, onClose])

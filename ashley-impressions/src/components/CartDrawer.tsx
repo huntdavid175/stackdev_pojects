@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, type FormEvent, type ReactNode } from 'rea
 import { FREE_SHIPPING_AT, addToCart, applyDiscount, clearDiscount, closeCart, removeLine, setQty, totals, useCart } from '../cart'
 import { CloseIcon, Plus } from '../icons'
 import { img } from '../asset'
+import { lockScroll, unlockScroll } from '../scrollLock'
 
 const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 
@@ -79,11 +80,11 @@ export default function CartDrawer() {
     if (!cart.open) return
     const prevFocus = document.activeElement as HTMLElement | null
     closeRef.current?.focus()
-    document.body.style.overflow = 'hidden'
+    lockScroll()
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && closeCart()
     document.addEventListener('keydown', onKey)
     return () => {
-      document.body.style.overflow = ''
+      unlockScroll()
       document.removeEventListener('keydown', onKey)
       prevFocus?.focus()
       setCheckoutMsg(false)

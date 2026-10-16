@@ -3,6 +3,7 @@ import { BagIcon, ChevronDown, MenuIcon, SearchIcon, UserIcon, CloseIcon } from 
 import { Link, usePath } from '../router'
 import { linkFor } from '../catalog'
 import { openCart, totals, useCart } from '../cart'
+import { lockScroll, unlockScroll } from '../scrollLock'
 import { img } from '../asset'
 
 type MenuId = 'skin' | 'shop' | 'collections'
@@ -119,7 +120,9 @@ export default function Header() {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = drawer ? 'hidden' : ''
+    if (!drawer) return
+    lockScroll()
+    return unlockScroll
   }, [drawer])
 
   const hoverOpen = (id: MenuId | null) => {
