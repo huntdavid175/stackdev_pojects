@@ -4,7 +4,7 @@ import { ChevronDown, FacebookIcon, InstagramIcon, GhanaFlag, VimeoIcon, XIcon, 
 import { img } from '../asset'
 
 const columns = [
-  { title: 'Collections', links: ['Body Care', 'Cleaners', 'Serums', 'Skincare', 'Moisturizer'] },
+  { title: 'Collections', links: ['Body Care', 'Cleansers', 'Serums', 'Skincare', 'Moisturizer'] },
   { title: 'About', links: ['Contact', 'Blog', 'About', 'FAQs', 'Find a store'] },
   { title: 'Shop', links: ['Shop All', 'Sale', 'Lookbook', 'Basic Collection'] },
 ]

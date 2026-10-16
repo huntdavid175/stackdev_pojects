@@ -717,7 +717,7 @@ a.nav__link::after {
 .product-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 6px;
+  gap: 48px 20px;
 }
 
 .product-card {
@@ -726,7 +726,7 @@ a.nav__link::after {
 
 .product-card__media {
   position: relative;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   background: var(--card);
   overflow: hidden;
 }
@@ -744,7 +744,7 @@ a.nav__link::after {
 
 .badge {
   position: absolute;
-  top: 12px;
+  bottom: 12px;
   left: 12px;
   padding: 1px 11px;
   font-size: 16px;
@@ -1676,9 +1676,21 @@ a.nav__link::after {
 
 .breadcrumbs ol {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
   font-size: 17px;
+}
+
+.breadcrumbs li {
+  flex: none;
+  white-space: nowrap;
+}
+
+.breadcrumbs li:last-child {
+  flex: 0 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--muted);
 }
 
 .breadcrumbs li + li::before {
@@ -1713,7 +1725,7 @@ a.nav__link::after {
 .pdp-gallery__main {
   position: relative;
   display: grid;
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 5;
   background: var(--card);
   overflow: hidden;
 }
@@ -1759,7 +1771,7 @@ a.nav__link::after {
 
 .pdp-gallery__thumbs {
   display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
+  grid-template-columns: repeat(5, minmax(0, 88px));
   gap: 7px;
   margin-top: 8px;
 }
@@ -1822,6 +1834,15 @@ a.nav__link::after {
   display: inline-flex;
   gap: 3px;
   color: var(--sale);
+}
+
+.pdp__size-single {
+  margin-top: 28px;
+  font-size: 17px;
+}
+
+.pdp__size-single strong {
+  font-weight: 600;
 }
 
 .pdp__sizes {
@@ -3104,7 +3125,7 @@ a.nav__link::after {
 @media (max-width: 960px) {
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    row-gap: 32px;
+    gap: 32px 12px;
   }
 
   .categories__grid {
@@ -3188,6 +3209,37 @@ a.nav__link::after {
   .bundle__price {
     grid-column: 3;
     margin-top: 4px;
+  }
+
+  .product-card__name,
+  .col-grid .product-card__name {
+    margin-top: 14px;
+    font-size: 15px;
+  }
+
+  .badge {
+    bottom: 8px;
+    left: 8px;
+    padding-inline: 8px;
+    font-size: 13px;
+  }
+
+  .breadcrumbs {
+    padding-block: 20px;
+  }
+
+  .breadcrumbs ol {
+    font-size: 15px;
+  }
+
+  .breadcrumbs li + li::before {
+    width: 6px;
+    height: 6px;
+    margin-inline: 10px 12px;
+  }
+
+  .pdp-gallery__thumbs {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .cart__head {

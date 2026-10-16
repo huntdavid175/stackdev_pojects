@@ -147,28 +147,34 @@ export default function ProductPage() {
               (2)
             </a>
 
-            <fieldset className="pdp__sizes">
-              <legend>
+            {sizes.length === 1 ? (
+              <p className="pdp__size-single">
                 <strong>Size:</strong> {v.label}
-              </legend>
-              <div className="pdp__size-list">
-                {sizes.map((s, i) => (
-                  <label key={s.label} className={i === size ? 'is-active' : undefined}>
-                    <input
-                      type="radio"
-                      name="size"
-                      className="sr-only"
-                      checked={i === size}
-                      onChange={() => {
-                        setSize(i)
-                        setAdded(false)
-                      }}
-                    />
-                    {s.label}
-                  </label>
-                ))}
-              </div>
-            </fieldset>
+              </p>
+            ) : (
+              <fieldset className="pdp__sizes">
+                <legend>
+                  <strong>Size:</strong> {v.label}
+                </legend>
+                <div className="pdp__size-list">
+                  {sizes.map((s, i) => (
+                    <label key={s.label} className={i === size ? 'is-active' : undefined}>
+                      <input
+                        type="radio"
+                        name="size"
+                        className="sr-only"
+                        checked={i === size}
+                        onChange={() => {
+                          setSize(i)
+                          setAdded(false)
+                        }}
+                      />
+                      {s.label}
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+            )}
 
             <button
               className="btn-pill btn-pill--dark btn-pill--block pdp__atc"
