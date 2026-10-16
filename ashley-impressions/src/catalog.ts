@@ -56,7 +56,7 @@ export const collections: Collection[] = [
     handle: 'cleansers',
     title: 'Cleansers',
     description: 'Gentle washes, oils and micellar waters that lift the day away without stripping your skin.',
-    banner: 'bundle.webp',
+    banner: 'banner-cleansers.webp',
     types: ['Cleansers', 'Toners'],
   },
   {

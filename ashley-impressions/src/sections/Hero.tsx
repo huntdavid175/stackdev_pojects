@@ -4,15 +4,15 @@ import { img } from '../asset'
 export default function Hero() {
   return (
     <section className="hero">
-      <img className="hero__img" src={img('hero.webp')} alt="Man with curly hair using a jade face roller" />
+      <img className="hero__img" src={img('hero.webp')} alt="Three women holding lip gloss and foundation in a warm studio" />
       <div className="hero__content">
-        <p className="hero__eyebrow">Men care starts here</p>
+        <p className="hero__eyebrow">Skincare and beauty across Ghana</p>
         <h1 className="hero__title">
-          The ultimate
+          Made for
           <br />
-          place for
+          your natural
           <br />
-          men's beauty
+          glow
         </h1>
         <div className="hero__actions">
           <a href="#featured" className="btn-square btn-square--solid">View more</a>
