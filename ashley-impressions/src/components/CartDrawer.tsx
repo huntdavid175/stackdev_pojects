@@ -19,9 +19,9 @@ import { img } from '../asset'
 const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 
 const recommendations = [
-  { name: 'Elements of comfort body oil', price: 1440, img: 'cart-upsell-1.webp' },
-  { name: 'Smooth whipped body treatment', price: 600, img: 'related-4.webp' },
-  { name: 'Exfoliating daily cleanser', price: 900, img: 'related-2.webp' },
+  { name: 'Makari Argan & Carrot body oil', price: 400, img: 'products/makari-body-oil.webp' },
+  { name: 'Hatomugi UV milky gel SPF50+', price: 200, img: 'products/hatomugi-uv-gel.webp' },
+  { name: 'Exfoliating shower gel', price: 140, img: 'products/exfoliating-shower-gel.webp' },
 ]
 
 function Minus() {

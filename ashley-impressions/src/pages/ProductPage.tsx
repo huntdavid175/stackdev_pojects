@@ -6,33 +6,30 @@ import UpsellCarousel from '../components/UpsellCarousel'
 import { img } from '../asset'
 
 const gallery = [
-  { src: 'pdp-1.webp', alt: 'Deep Clean micellar water and Exfoliating daily cleanser bottles' },
+  { src: 'products/anua-heartleaf-foam.webp', alt: 'Anua Heartleaf Quercetinol pore deep cleansing foam, tube and box' },
   { src: 'pdp-2.webp', alt: 'Cleanser foam in an open palm' },
   { src: 'pdp-3.webp', alt: 'Woman in a hair towel applying cleanser' },
-  { src: 'pdp-4.webp', alt: 'Smiling woman wearing a pore strip' },
   { src: 'pdp-5.webp', alt: 'Hands being rinsed under a tap' },
 ]
 
-const sizes = [
-  { label: '50ml', price: 1910, compareAt: 2280 },
-  { label: '75ml', price: 2270, compareAt: 2700 },
-  { label: '100ml', price: 2630, compareAt: 3120 },
-]
+const PRODUCT = 'Anua Heartleaf Quercetinol pore deep cleansing foam'
+
+const sizes: { label: string; price: number; compareAt?: number }[] = [{ label: '150ml', price: 250 }]
 
 const upsells = [
-  { name: 'Natural body wash', price: 2520, img: 'pdp-upsell-1.webp' },
-  { name: 'Exfoliating daily cleanser', price: 900, img: 'related-2.webp' },
-  { name: 'Smooth whipped body treatment', price: 600, img: 'related-4.webp' },
+  { name: 'Skin1004 Centella soothing cream', price: 290, img: 'products/centella-soothing-cream.webp' },
+  { name: 'Hatomugi UV milky gel SPF50+', price: 200, img: 'products/hatomugi-uv-gel.webp' },
+  { name: 'Makari Argan & Carrot toning glycerin', price: 800, img: 'products/makari-toning-glycerin.webp' },
 ]
 
 const details = [
   {
     title: 'Core features',
-    body: 'A two-step routine: the micellar water lifts make-up and sunscreen without rubbing, then the AHA cleanser clears pores and smooths texture. Fragrance free and suitable for daily use.',
+    body: 'A low-pH Korean foam cleanser that lathers into a soft, dense foam to lift away sebum, sunscreen and the day’s grime from deep in the pores, without leaving skin tight. Gentle enough for morning and evening use.',
   },
   {
     title: 'Ingredients',
-    body: 'Micellar water: aqua, glycerin, poloxamer 184, aloe barbadensis leaf juice, panthenol. Daily cleanser: aqua, cocamidopropyl betaine, glycolic acid, lactic acid, niacinamide, allantoin.',
+    body: 'Key ingredients: heartleaf (Houttuynia cordata) extract to soothe and calm, BHA to clear pores, and Quercetinol™ for a clearer-looking complexion. 150ml / 5.07 fl. oz.',
   },
   {
     title: 'Shipping & return',
@@ -40,11 +37,11 @@ const details = [
   },
 ]
 
-const related = [
-  { name: 'Deep clean micellar water', img: 'related-1.webp', price: 1070, compareAt: 1200, badge: '-11%' },
-  { name: 'Exfoliating daily cleanser', img: 'related-2.webp', price: 900 },
-  { name: 'The comfy kit', img: 'related-3.webp', price: 1920 },
-  { name: 'Smooth whipped exfoliating body treatment', img: 'related-4.webp', price: 600 },
+const related: { name: string; img: string; price: number; compareAt?: number; badge?: string }[] = [
+  { name: 'Skin1004 Madagascar Centella soothing cream', img: 'products/centella-soothing-cream.webp', price: 290, badge: 'New' },
+  { name: 'Turmeric & Carrot exfoliating shower gel', img: 'products/exfoliating-shower-gel.webp', price: 140 },
+  { name: 'Hatomugi UV milky gel SPF50+', img: 'products/hatomugi-uv-gel.webp', price: 200 },
+  { name: 'Makari Extreme Argan & Carrot Oil toning glycerin', img: 'products/makari-toning-glycerin.webp', price: 800 },
 ]
 
 const money = (n: number) => `GH₵${n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
@@ -120,7 +117,7 @@ export default function ProductPage() {
   const [size, setSize] = useState(0)
   const [added, setAdded] = useState(false)
   const v = sizes[size]
-  const save = Math.round((1 - v.price / v.compareAt) * 100)
+  const save = v.compareAt && Math.round((1 - v.price / v.compareAt) * 100)
 
   return (
     <>
@@ -129,7 +126,7 @@ export default function ProductPage() {
           <ol>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/collections/cleansers">Cleansers</Link></li>
-            <li aria-current="page">Deep clean kit</li>
+            <li aria-current="page">{PRODUCT}</li>
           </ol>
         </nav>
 
@@ -137,11 +134,11 @@ export default function ProductPage() {
           <Gallery />
 
           <div className="pdp__info">
-            <h1 className="pdp__title">Deep clean kit</h1>
+            <h1 className="pdp__title">{PRODUCT}</h1>
             <div className="pdp__price">
               <span>{money(v.price)}</span>
-              <s>{money(v.compareAt)}</s>
-              <span className="badge-inline">Save {save}%</span>
+              {v.compareAt && <s>{money(v.compareAt)}</s>}
+              {save ? <span className="badge-inline">Save {save}%</span> : null}
             </div>
             <a href="#reviews" className="pdp__rating" aria-label="Rated 5 out of 5, 2 reviews">
               <span className="stars" aria-hidden="true">
@@ -176,7 +173,7 @@ export default function ProductPage() {
             <button
               className="btn-pill btn-pill--dark btn-pill--block pdp__atc"
               onClick={() => {
-                addToCart({ name: 'Deep clean kit', img: 'pdp-1.webp', price: v.price, variant: v.label })
+                addToCart({ name: PRODUCT, img: 'products/anua-heartleaf-foam.webp', price: v.price, variant: v.label })
                 setAdded(true)
               }}
             >
@@ -217,7 +214,7 @@ export default function ProductPage() {
                 <Link href={PRODUCT_URL} className="product-card">
                   <div className="product-card__media">
                     <img src={img(p.img)} alt={p.name} loading="lazy" />
-                    {p.badge && <span className="badge badge--sale">{p.badge}</span>}
+                    {p.badge && <span className={`badge badge--${p.badge === 'New' ? 'new' : 'sale'}`}>{p.badge}</span>}
                   </div>
                   <h3 className="product-card__name">{p.name}</h3>
                   <p className="product-card__price">

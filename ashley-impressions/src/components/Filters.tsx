@@ -57,6 +57,11 @@ const typeIcons: Record<ProductType, ReactNode> = {
       <path d="M10 4h24l-4 54H14zM14 58h16v6H14zM17 64h10v8H17zM12 18h20" />
     </svg>
   ),
+  Supplements: (
+    <svg width="48" height="76" viewBox="0 0 48 76" {...stroke}>
+      <path d="M12 6h24v12H12zM10 18h28a2 2 0 0 1 2 2v50a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V20a2 2 0 0 1 2-2zM8 32h32M8 58h32M20 42h8a3 3 0 0 1 0 6h-8a3 3 0 0 1 0-6z" />
+    </svg>
+  ),
 }
 
 // ---- panel ----

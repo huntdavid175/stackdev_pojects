@@ -7,16 +7,16 @@ type Product = { name: string; img: string; price: number; compareAt?: number; b
 
 const products: Record<'skin' | 'body', Product[]> = {
   skin: [
-    { name: 'Ultimate Facelift Day Cream', img: 'product-1.webp', price: 325, compareAt: 360, badge: { label: '-10%', tone: 'sale' } },
-    { name: 'Ultimate Facelift Day Cream', img: 'product-2.webp', price: 360, badge: { label: 'New', tone: 'new' } },
-    { name: 'Intense Repair Body Cream', img: 'product-3.webp', price: 360, badge: { label: 'Bestseller', tone: 'best' } },
-    { name: 'Intense Repair Body Cream', img: 'product-4.webp', price: 300, compareAt: 360, badge: { label: '-16%', tone: 'sale' } },
+    { name: 'Anua Heartleaf pore deep cleansing foam', img: 'products/anua-heartleaf-foam.webp', price: 250, badge: { label: 'Bestseller', tone: 'best' } },
+    { name: 'Skin1004 Centella soothing cream', img: 'products/centella-soothing-cream.webp', price: 290, badge: { label: 'New', tone: 'new' } },
+    { name: 'Hatomugi UV milky gel SPF50+', img: 'products/hatomugi-uv-gel.webp', price: 200 },
+    { name: 'Makari Argan & Carrot toning glycerin', img: 'products/makari-toning-glycerin.webp', price: 800 },
   ],
   body: [
-    { name: 'Intense Repair Body Cream', img: 'product-4.webp', price: 300, compareAt: 360, badge: { label: '-16%', tone: 'sale' } },
-    { name: 'Nourishing Body Wash', img: 'product-3.webp', price: 360, badge: { label: 'Bestseller', tone: 'best' } },
-    { name: 'Avocado Rescue Moisturiser', img: 'product-2.webp', price: 360, badge: { label: 'New', tone: 'new' } },
-    { name: 'Purifying Hand & Body Wash', img: 'product-1.webp', price: 325, compareAt: 360, badge: { label: '-10%', tone: 'sale' } },
+    { name: 'Makari Argan & Carrot body oil', img: 'products/makari-body-oil.webp', price: 400, badge: { label: 'Bestseller', tone: 'best' } },
+    { name: 'Advanced Korean Skin body oil', img: 'products/korean-body-oil.webp', price: 150, badge: { label: 'New', tone: 'new' } },
+    { name: 'Veetgold Vitamin C body corrector oil', img: 'products/veetgold-vitamin-c-oil.webp', price: 170 },
+    { name: 'Bismid Clear & Glow whitening lotion', img: 'products/bismid-whitening-lotion.webp', price: 200 },
   ],
 }
 

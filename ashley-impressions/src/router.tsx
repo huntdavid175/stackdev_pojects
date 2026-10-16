@@ -31,4 +31,4 @@ export function Link({ href, onClick, ...rest }: AnchorHTMLAttributes<HTMLAnchor
   return <a href={withBase(href)} onClick={handle} {...rest} />
 }
 
-export const PRODUCT_URL = '/products/deep-clean-kit'
+export const PRODUCT_URL = '/products/anua-heartleaf-cleansing-foam'

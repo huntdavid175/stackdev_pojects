@@ -1,6 +1,6 @@
 // Mock catalog for the mockup. In Shopify this comes from collection.products + storefront filters.
 
-export type ProductType = 'Serums' | 'Cleansers' | 'Toners' | 'Body & Hands' | 'Masks' | 'Moisturizer'
+export type ProductType = 'Serums' | 'Cleansers' | 'Toners' | 'Body & Hands' | 'Masks' | 'Moisturizer' | 'Supplements'
 export type Badge = { label: string; tone: 'sale' | 'new' | 'best' }
 
 export type Product = {
@@ -16,7 +16,7 @@ export type Product = {
   sales: number // for "best selling"
 }
 
-export const SIZES = ['30ml', '45ml', '50ml', '75ml', '100ml']
+export const SIZES = ['75ml', '89ml', '125ml', '150ml', '250ml', '280ml', '350ml', '500ml', '1000ml', '390 tablets']
 
 const p = (
   id: string,
@@ -29,30 +29,17 @@ const p = (
 ): Product => ({ id, name, img, price, type, sizes, added: 30, sales: 10, ...extra })
 
 export const products: Product[] = [
-  p('power-couple-kit', 'Power couple kit', 'p-power-couple.webp', 1200, 'Serums', ['30ml', '45ml'], { badge: 'best', sales: 98, added: 40 }),
-  p('snow-mushroom-mask', 'Snow - mushroom day/night mask', 'p-snow-mask.webp', 840, 'Masks', ['50ml', '75ml'], { sales: 41 }),
-  p('natural-body-wash', 'Natural body wash', 'p-natural-wash.webp', 2520, 'Body & Hands', ['75ml', '100ml'], { badge: 'new', added: 2 }),
-  p('deep-clean-micellar-water', 'Deep clean micellar water', 'related-1.webp', 1070, 'Cleansers', ['45ml', '75ml'], { compareAt: 1200, sales: 77 }),
-  p('intense-repair-body-cream', 'Intense Repair Body Cream', 'product-4.webp', 300, 'Body & Hands', ['50ml', '75ml'], { compareAt: 360, sales: 64 }),
-  p('ultimate-facelift-day-cream', 'Ultimate Facelift Day Cream', 'p-sandalwood.webp', 360, 'Moisturizer', ['45ml', '75ml'], { badge: 'best', sales: 91 }),
-  p('smooth-whipped-body-treatment', 'Smooth whipped exfoliating body treatment', 'related-4.webp', 600, 'Body & Hands', ['75ml'], { sales: 22 }),
-  p('gentle-retinol-night-serum', 'Gentle retinol night serum', 'p-gentle.webp', 600, 'Serums', ['30ml', '45ml'], { badge: 'new', added: 4 }),
-  p('triple-vitamin-c-serum', 'Triple vitamin-c brightening serum', 'p-brightening.webp', 720, 'Serums', ['30ml', '45ml', '50ml'], { sales: 55 }),
-  p('avocado-hydrating-cleanser', 'Avocado hydrating cleanser', 'p-avocado-cleanser.webp', 420, 'Cleansers', ['75ml', '100ml'], { sales: 30 }),
-  p('deep-clean-kit', 'Deep clean kit', 'pdp-1.webp', 1910, 'Cleansers', ['50ml', '75ml', '100ml'], { compareAt: 2280, sales: 70, added: 12 }),
-  p('exfoliating-daily-cleanser', 'Exfoliating daily cleanser', 'related-2.webp', 900, 'Cleansers', ['75ml'], { sales: 48 }),
-  p('the-comfy-kit', 'The comfy kit', 'related-3.webp', 1920, 'Body & Hands', ['75ml'], { sales: 35, added: 8 }),
-  p('purifying-face-wash', 'Purifying face wash', 'product-1.webp', 325, 'Cleansers', ['45ml', '75ml'], { compareAt: 360, sales: 60 }),
-  p('avocado-rescue-moisturiser', 'Avocado rescue moisturiser', 'product-2.webp', 360, 'Moisturizer', ['50ml'], { badge: 'new', added: 3 }),
-  p('semina-cleansing-oil', 'Semina cleansing oil', 'product-3.webp', 360, 'Cleansers', ['75ml', '100ml'], { badge: 'best', sales: 88 }),
-  p('balancing-rose-toner', 'Balancing rose toner', 'related-2.webp', 455, 'Toners', ['75ml', '100ml'], { sales: 18 }),
-  p('pore-refining-toner', 'Pore refining toner', 'p-avocado-cleanser.webp', 505, 'Toners', ['100ml'], { sales: 26, added: 15 }),
-  p('amore-overnight-mask', 'Amore overnight mask', 'cat-serums.webp', 660, 'Masks', ['50ml'], { sales: 33 }),
-  p('mood-body-butter', 'Mood body butter', 'cat-body.webp', 540, 'Body & Hands', ['75ml'], { sales: 21 }),
-  p('blanca-hand-body-wash', 'Blanca hand & body wash', 'cat-moisturizer.webp', 385, 'Body & Hands', ['75ml', '100ml'], { sales: 39 }),
-  p('hyaluronic-sea-serum', 'Hyaluronic sea serum', 'p-gentle.webp', 1560, 'Serums', ['30ml', '50ml'], { sales: 52 }),
-  p('bio-retinol-mask', 'Bio-retinol mask', 'p-snow-mask.webp', 780, 'Masks', ['50ml'], { sales: 29, added: 6 }),
-  p('sandalwood-hand-cream', 'Sandalwood hand cream', 'p-sandalwood.webp', 265, 'Body & Hands', ['30ml', '45ml'], { sales: 45 }),
+  p('anua-heartleaf-cleansing-foam', 'Anua Heartleaf Quercetinol pore deep cleansing foam', 'products/anua-heartleaf-foam.webp', 250, 'Cleansers', ['150ml'], { badge: 'best', sales: 96 }),
+  p('skin1004-centella-soothing-cream', 'Skin1004 Madagascar Centella soothing cream', 'products/centella-soothing-cream.webp', 290, 'Moisturizer', ['75ml'], { badge: 'new', added: 3, sales: 40 }),
+  p('makari-toning-glycerin', 'Makari Extreme Argan & Carrot Oil toning glycerin', 'products/makari-toning-glycerin.webp', 800, 'Toners', ['500ml'], { sales: 58 }),
+  p('makari-botanical-body-oil', 'Makari Extreme Argan & Carrot botanical body oil', 'products/makari-body-oil.webp', 400, 'Body & Hands', ['125ml'], { badge: 'best', sales: 88 }),
+  p('hatomugi-uv-milky-gel', 'Hatomugi UV milky gel SPF50+', 'products/hatomugi-uv-gel.webp', 200, 'Moisturizer', ['250ml'], { sales: 64 }),
+  p('advanced-korean-skin-body-oil', 'Advanced Korean Skin body oil', 'products/korean-body-oil.webp', 150, 'Body & Hands', ['280ml'], { badge: 'new', added: 2, sales: 52 }),
+  p('veetgold-vitamin-c-body-oil', 'Veetgold Vitamin C body corrector oil', 'products/veetgold-vitamin-c-oil.webp', 170, 'Body & Hands', ['1000ml'], { sales: 77 }),
+  p('bismid-clear-glow-lotion', 'Bismid Clear & Glow whitening lotion', 'products/bismid-whitening-lotion.webp', 200, 'Body & Hands', ['350ml'], { sales: 45 }),
+  p('exfoliating-shower-gel', 'Turmeric & Carrot exfoliating shower gel', 'products/exfoliating-shower-gel.webp', 140, 'Cleansers', ['1000ml'], { sales: 70, added: 12 }),
+  p('black-girl-sunscreen-kids', 'Black Girl Sunscreen Kids SPF 50', 'products/bgs-kids-sunscreen.webp', 220, 'Moisturizer', ['89ml'], { sales: 33, added: 8 }),
+  p('youtheory-collagen-biotin', 'Youtheory Collagen + Biotin, 390 tablets', 'products/youtheory-collagen.webp', 480, 'Supplements', ['390 tablets'], { sales: 61 }),
 ]
 
 export type Collection = { handle: string; title: string; description: string; banner: string; types: ProductType[] }
@@ -91,7 +78,7 @@ export const collections: Collection[] = [
     title: 'Masks',
     description: 'Weekly treatments that clarify, calm and restore — ten minutes well spent.',
     banner: 'collections.webp',
-    types: ['Masks', 'Serums'],
+    types: ['Masks', 'Cleansers', 'Toners'],
   },
   {
     handle: 'moisturizer',
