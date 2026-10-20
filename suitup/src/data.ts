@@ -179,27 +179,31 @@ export const heroSlides = [
 
 export const announcements = ['Free alterations on every suit', 'Book a fitting at our boutique', 'Join our newsletter for 10% off']
 
+// One boutique in Dansoman, Accra. Street details, phone and hours are placeholders to confirm with SuitUp.
+const ADDRESS = ['Dansoman High Street', 'Dansoman, Accra', 'Greater Accra, Ghana']
+export const MAP_QUERY = 'Dansoman, Accra, Ghana'
+
 export const stores = [
   {
-    name: 'SuitUp Boutique',
-    address: ['273 Street Lane', 'San Francisco, CA 94102'],
-    phone: '(415) 557-4400',
-    email: 'store@email.com',
-    hours: ['Monday - Saturday, 10:00 to 20:00', 'Sunday, 12:00 to 18:00', 'Fittings by appointment'],
+    name: 'SuitUp Boutique, Dansoman',
+    address: ADDRESS,
+    phone: '+233 24 000 0000',
+    email: 'hello@suitup.store',
+    hours: ['Monday - Saturday, 9:00 to 19:00', 'Sunday, 12:00 to 17:00'],
   },
   {
-    name: 'Ventura Store',
-    address: ['1 Harbor Boulevard', 'Ventura, CA 93001'],
-    phone: '(805) 555-0136',
-    email: 'store@email.com',
-    hours: ['Monday - Saturday, 10:00 to 19:00', 'Sunday, 11:00 to 17:00'],
+    name: 'Fittings & alterations',
+    address: ADDRESS,
+    phone: '+233 24 000 0000',
+    email: 'fittings@suitup.store',
+    hours: ['By appointment, Monday - Saturday', 'Free alterations on every suit', 'Allow 3 - 5 days for alterations'],
   },
   {
-    name: 'London Store',
-    address: ['12 Redchurch Street', 'London E2 7DJ'],
-    phone: '+44 20 7946 0958',
-    email: 'store@email.com',
-    hours: ['Monday - Saturday, 10:00 to 19:00', 'Sunday, 12:00 to 18:00'],
+    name: 'Collections & returns',
+    address: ADDRESS,
+    phone: '+233 24 000 0000',
+    email: 'hello@suitup.store',
+    hours: ['Collect online orders in store', 'Returns within 30 days, unworn', 'Monday - Saturday, 9:00 to 19:00'],
   },
 ]
 

@@ -1101,10 +1101,12 @@ button {
   overflow: hidden;
 }
 
-.stores__map img {
+.stores__map iframe {
+  display: block;
   width: 100%;
   aspect-ratio: 866 / 365;
-  object-fit: cover;
+  border: 0;
+  filter: grayscale(0.35) contrast(0.95);
 }
 
 .stores__directions {
@@ -1391,7 +1393,7 @@ button {
     gap: 10px;
   }
 
-  .stores__map img {
+  .stores__map iframe {
     aspect-ratio: 4 / 3;
   }
 

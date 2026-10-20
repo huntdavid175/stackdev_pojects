@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { img } from '../asset'
-import { collections, eveningEdit, goodsTabs, handle, heroSlides, stores } from '../data'
+import { collections, eveningEdit, goodsTabs, handle, heroSlides, MAP_QUERY, stores } from '../data'
 import { Link } from '../router'
 import Carousel from '../components/Carousel'
 import ProductCard from '../components/ProductCard'
@@ -186,8 +186,7 @@ export function Collections() {
 
 export function Stores() {
   const [open, setOpen] = useState(0)
-  const s = stores[open]
-  const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${s.address.join(', ')}`)}`
+  const directions = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`
   return (
     <section className="stores" id="stores">
       <div className="stores__list">
@@ -214,7 +213,12 @@ export function Stores() {
         ))}
       </div>
       <div className="stores__map">
-        <img src={img('store-map.webp')} alt={`Map around the ${s.name}`} loading="lazy" />
+        <iframe
+          title="Map of SuitUp in Dansoman, Accra"
+          src={`https://maps.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=15&output=embed`}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
         <a className="btn btn--coral stores__directions" href={directions} target="_blank" rel="noreferrer">Get directions</a>
       </div>
     </section>
