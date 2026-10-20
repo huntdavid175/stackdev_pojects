@@ -1,46 +1,31 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { img } from '../asset'
-import { collections, eveningEdit, goodsTabs, handle, heroSlides, MAP_QUERY, stores } from '../data'
+import { collections, eveningEdit, goodsTabs, handle, hero, MAP_QUERY, stores } from '../data'
 import { Link } from '../router'
 import Carousel from '../components/Carousel'
 import ProductCard from '../components/ProductCard'
 import { ChatIcon, HeartIcon, MinusIcon, PlusIcon, SewingIcon, WorldShipIcon } from '../icons'
 
-/* ---------- Hero slideshow ---------- */
+/* ---------- Hero ---------- */
 
 export function Hero() {
-  const [i, setI] = useState(0)
-  const [paused, setPaused] = useState(false)
-  useEffect(() => {
-    if (paused) return
-    const t = setTimeout(() => setI((n) => (n + 1) % heroSlides.length), 6500)
-    return () => clearTimeout(t)
-  }, [i, paused])
-
   return (
-    <section className="hero" aria-roledescription="carousel" onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
-      {heroSlides.map((s, n) => (
-        <div key={s.title} className={`hero__slide${n === i ? ' is-active' : ''}`} aria-hidden={n !== i}>
-          {/* two portraits side by side; phones show the first one only */}
-          <div className="hero__pair">
-            {s.images.map((src) => (
-              <img key={src} className="hero__img" src={img(src)} alt="" fetchPriority={n === 0 ? 'high' : 'auto'} loading={n === 0 ? 'eager' : 'lazy'} />
-            ))}
-          </div>
-          <div className="hero__content">
-            <h2 className="hero__title">{s.title}</h2>
-            <p className="hero__copy">{s.copy}</p>
-            <div className="hero__ctas">
-              <Link href={s.primary.href} className="btn btn--coral" tabIndex={n === i ? 0 : -1}>{s.primary.label}</Link>
-              <Link href={s.secondary.href} className="btn btn--ghost" tabIndex={n === i ? 0 : -1}>{s.secondary.label}</Link>
-            </div>
+    <section className="hero">
+      <div className="hero__slide is-active">
+        {/* two portraits side by side; phones show the first one only */}
+        <div className="hero__pair">
+          {hero.images.map((src) => (
+            <img key={src} className="hero__img" src={img(src)} alt="" fetchPriority="high" />
+          ))}
+        </div>
+        <div className="hero__content">
+          <h2 className="hero__title">{hero.title}</h2>
+          <p className="hero__copy">{hero.copy}</p>
+          <div className="hero__ctas">
+            <Link href={hero.primary.href} className="btn btn--coral">{hero.primary.label}</Link>
+            <Link href={hero.secondary.href} className="btn btn--ghost">{hero.secondary.label}</Link>
           </div>
         </div>
-      ))}
-      <div className="hero__dots">
-        {heroSlides.map((s, n) => (
-          <button key={s.title} className={n === i ? 'is-active' : undefined} aria-label={`Show slide ${n + 1}`} onClick={() => setI(n)} />
-        ))}
       </div>
     </section>
   )

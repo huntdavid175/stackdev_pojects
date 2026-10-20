@@ -561,26 +561,6 @@ button {
   gap: 14px;
 }
 
-.hero__dots {
-  position: absolute;
-  left: 50%;
-  bottom: 22px;
-  z-index: 2;
-  display: flex;
-  gap: 10px;
-  transform: translateX(-50%);
-}
-
-.hero__dots button {
-  width: 32px;
-  height: 14px;
-  background: linear-gradient(rgb(255 255 255 / 0.45), rgb(255 255 255 / 0.45)) center / 100% 2px no-repeat;
-}
-
-.hero__dots button.is-active {
-  background-image: linear-gradient(#fff, #fff);
-}
-
 /* ---------- Intro ---------- */
 .intro {
   padding: clamp(56px, 7vw, 100px) var(--gutter) clamp(40px, 6vw, 90px);

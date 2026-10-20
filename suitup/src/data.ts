@@ -153,29 +153,14 @@ export const collections = [
   { title: 'Trousers', image: 't-cream-high.webp' },
 ]
 
-export const heroSlides = [
-  {
-    images: ['hero-ivory-l.webp', 'hero-ivory-r.webp'],
-    title: 'Made for the moment',
-    copy: 'Tailoring cut to your measure, from the boardroom to the biggest day of your life.',
-    primary: { label: 'Shop suits', href: '/collections/suits' },
-    secondary: { label: 'Shop evening', href: '/collections/evening-wear' },
-  },
-  {
-    images: ['hero-plum-l.webp', 'hero-plum-r.webp'],
-    title: 'Dress to be remembered',
-    copy: 'Jacquard, brocade and velvet dinner jackets with a little sparkle, made for the nights that matter.',
-    primary: { label: 'Shop evening', href: '/collections/evening-wear' },
-    secondary: { label: 'See the range', href: '/collections/all' },
-  },
-  {
-    images: ['hero-champagne-l.webp', 'hero-champagne-r.webp'],
-    title: 'Suit up, your way',
-    copy: 'Visit the boutique for a fitting, or shop online with free alterations on every suit.',
-    primary: { label: 'Shop collections', href: '/collections/all' },
-    secondary: { label: 'Find a store', href: '#stores' },
-  },
-]
+// Home hero: one static two-up image (no slideshow)
+export const hero = {
+  images: ['hero-champagne-l.webp', 'hero-champagne-r.webp'],
+  title: 'Suit up, your way',
+  copy: 'Visit the boutique for a fitting, or shop online with free alterations on every suit.',
+  primary: { label: 'Shop suits', href: '/collections/suits' },
+  secondary: { label: 'Shop evening', href: '/collections/evening-wear' },
+}
 
 export const announcements = ['Free alterations on every suit', 'Book a fitting at our boutique', 'Join our newsletter for 10% off']
 
