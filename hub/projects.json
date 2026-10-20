@@ -19,5 +19,12 @@
     "description": "JLuxCurves — activewear, swim and wardrobe staples made to celebrate your curves.",
     "cover": "images/hero.webp",
     "updated": "2026-10-20T07:19:26.758Z"
+  },
+  {
+    "slug": "suitup",
+    "title": "SuitUp",
+    "description": "SuitUp — tailored suits, evening wear, shirts and knitwear, with free alterations on every suit.",
+    "cover": "images/banner-horse.webp",
+    "updated": "2026-10-20T11:51:17.118Z"
   }
 ]

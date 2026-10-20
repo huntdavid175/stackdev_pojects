@@ -1,0 +1,8 @@
+node_modules
+dist
+*.local
+.DS_Store
+
+# raw client media (source files) and walkthrough videos stay out of git
+new_images
+recordings

@@ -106,6 +106,47 @@
         }
       ]
     },
+    "suitup": {
+      "root": "suitup",
+      "framework": "vite",
+      "buildCommand": "npm run build && rm -rf .vercel-out && mkdir -p .vercel-out && cp -r dist .vercel-out/suitup",
+      "outputDirectory": ".vercel-out",
+      "rewrites": [
+        {
+          "source": "/suitup/(.*)",
+          "destination": "/suitup/index.html"
+        }
+      ],
+      "headers": [
+        {
+          "source": "/suitup/assets/(.*)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=31536000, immutable"
+            }
+          ]
+        },
+        {
+          "source": "/suitup/images/(.*)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=86400, s-maxage=31536000, stale-while-revalidate=604800"
+            }
+          ]
+        },
+        {
+          "source": "/suitup/videos/(.*)",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "public, max-age=86400, s-maxage=31536000, stale-while-revalidate=604800"
+            }
+          ]
+        }
+      ]
+    },
     "hub": {
       "root": "hub",
       "entrypoint": "server.mjs"
@@ -128,6 +169,12 @@
       "source": "/jluxcurves/(.*)",
       "destination": {
         "service": "jluxcurves"
+      }
+    },
+    {
+      "source": "/suitup/(.*)",
+      "destination": {
+        "service": "suitup"
       }
     },
     {
