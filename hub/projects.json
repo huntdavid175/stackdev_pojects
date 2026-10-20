@@ -2,15 +2,22 @@
   {
     "slug": "ashley-impressions",
     "title": "Ashley's Impression",
-    "description": "Ashley's Impression — skincare and body care made simple.",
+    "description": "Skincare and body care from Anua, Skin1004, Makari and more, with delivery across Ghana.",
     "cover": "images/hero.webp",
-    "updated": "2026-10-10T17:41:00.273Z"
+    "updated": "2026-10-16T13:50:48.809Z"
   },
   {
     "slug": "hair-by-gyeiwaa",
     "title": "Hair by Gyeiwaa",
     "description": "Hair by Gyeiwaa — raw luxury bundles, wigs, frontals and closures.",
     "cover": "images/hero.webp",
-    "updated": "2026-10-10T17:41:07.717Z"
+    "updated": "2026-10-16T14:25:44.923Z"
+  },
+  {
+    "slug": "jluxcurves",
+    "title": "JLuxCurves",
+    "description": "JLuxCurves — activewear, swim and wardrobe staples made to celebrate your curves.",
+    "cover": "images/hero.webp",
+    "updated": "2026-10-20T07:19:26.758Z"
   }
 ]
