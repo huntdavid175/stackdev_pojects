@@ -30,67 +30,67 @@ const at = (s: Swatch, image: string) => ({ ...s, image })
 // The brand's own pieces, photographed and filmed by JLuxCurves. Names other than the Amy Set are placeholders.
 export const products: Product[] = [
   {
-    id: 'long-sleeve-flare-set', name: 'Long-Sleeve Flare Set', price: 76, badge: 'New', kind: 'flare-set', collection: 'Flare Sets',
+    id: 'long-sleeve-flare-set', name: 'Long-Sleeve Flare Set', price: 420, badge: 'New', kind: 'flare-set', collection: 'Flare Sets',
     image: 'p-longsleeve-blush.webp',
     gallery: ['p-longsleeve-blush.webp', 'v-longsleeve-blush.mp4', 'group-garden.webp'],
     swatches: [at(c('Blush', '#efc6c4'), 'p-longsleeve-blush.webp')], sizes: SIZES,
   },
   {
-    id: 'halter-flare-set', name: 'Halter Flare Set', price: 72, badge: 'Bestseller', kind: 'flare-set', collection: 'Flare Sets',
+    id: 'halter-flare-set', name: 'Halter Flare Set', price: 395, badge: 'Bestseller', kind: 'flare-set', collection: 'Flare Sets',
     image: 'p-halter-cream.webp', hoverImage: 'p-halter-mocha.webp',
     gallery: ['p-halter-cream.webp', 'v-halter-cream.mp4', 'p-halter-mocha.webp', 'v-garden-duo.mp4'],
     swatches: [at(c('Cream', '#ebe2cc'), 'p-halter-cream.webp'), at(c('Mocha', '#a9826a'), 'p-halter-mocha.webp')], sizes: SIZES,
   },
   {
-    id: 'sculpt-contour-catsuit', name: 'Sculpt Contour Catsuit', price: 78, badge: 'New', kind: 'catsuit', collection: 'Catsuits',
+    id: 'sculpt-contour-catsuit', name: 'Sculpt Contour Catsuit', price: 450, badge: 'New', kind: 'catsuit', collection: 'Catsuits',
     image: 'p-catsuit-1.webp', hoverImage: 'p-catsuit-2.webp',
     gallery: ['p-catsuit-1.webp', 'p-catsuit-2.webp', 'p-catsuit-3.webp'],
     swatches: [at(c('Stone', '#cdbfae'), 'p-catsuit-1.webp')], sizes: SIZES,
   },
   {
-    id: 'amy-set', name: 'Amy Set', price: 85, badge: 'Bestseller', kind: 'legging-set', collection: 'Legging Sets',
+    id: 'amy-set', name: 'Amy Set', price: 480, badge: 'Bestseller', kind: 'legging-set', collection: 'Legging Sets',
     image: 'p-amy.webp',
     gallery: ['p-amy.webp'],
     swatches: [at(c('Wine', '#6e2233'), 'p-amy.webp')], sizes: SIZES,
   },
   {
-    id: 'crop-tee-flare-set', name: 'Crop Tee Flare Set', price: 64, compareAt: 80, kind: 'flare-set', collection: 'Flare Sets',
+    id: 'crop-tee-flare-set', name: 'Crop Tee Flare Set', price: 350, compareAt: 450, kind: 'flare-set', collection: 'Flare Sets',
     image: 'p-croptee-fuchsia.webp', hoverImage: 'p-croptee-trio.webp',
     gallery: ['p-croptee-fuchsia.webp', 'p-croptee-trio.webp'],
     swatches: [at(c('Fuchsia', '#df2378'), 'p-croptee-fuchsia.webp'), at(ivory, 'p-croptee-trio.webp'), at(navy, 'p-croptee-trio.webp')], sizes: SIZES,
   },
   {
-    id: 'plum-tee-flare-set', name: 'Plum Tee Flare Set', price: 64, badge: 'New', kind: 'flare-set', collection: 'Flare Sets',
+    id: 'plum-tee-flare-set', name: 'Plum Tee Flare Set', price: 350, badge: 'New', kind: 'flare-set', collection: 'Flare Sets',
     image: 'p-plum-1.webp', hoverImage: 'p-plum-2.webp',
     gallery: ['p-plum-1.webp', 'v-plum-tee.mp4', 'p-plum-2.webp'],
     swatches: [at(c('Plum', '#6b2a7c'), 'p-plum-1.webp')], sizes: SIZES,
   },
   {
-    id: 'everyday-tee-legging-set', name: 'Everyday Tee & Legging Set', price: 60, kind: 'legging-set', collection: 'Legging Sets',
+    id: 'everyday-tee-legging-set', name: 'Everyday Tee & Legging Set', price: 330, kind: 'legging-set', collection: 'Legging Sets',
     image: 'p-tee-petal.webp',
     gallery: ['p-tee-petal.webp', 'v-petal-tee.mp4'],
     swatches: [at(c('Petal', '#f2d8d5'), 'p-tee-petal.webp')], sizes: SIZES,
   },
   {
-    id: 'cloud-zip-hoodie-set', name: 'Cloud Zip Hoodie Set', price: 88, kind: 'tracksuit', collection: 'Tracksuits',
+    id: 'cloud-zip-hoodie-set', name: 'Cloud Zip Hoodie Set', price: 500, kind: 'tracksuit', collection: 'Tracksuits',
     image: 'p-zip-hoodie.webp',
     gallery: ['p-zip-hoodie.webp'],
     swatches: [at(ivory, 'p-zip-hoodie.webp')], sizes: SIZES,
   },
   {
-    id: 'stripe-track-set', name: 'Stripe Track Set', price: 82, kind: 'tracksuit', collection: 'Tracksuits',
+    id: 'stripe-track-set', name: 'Stripe Track Set', price: 460, kind: 'tracksuit', collection: 'Tracksuits',
     image: 'p-track-trio.webp',
     gallery: ['p-track-trio.webp'],
     swatches: [c('Lilac', '#c7a2cf'), black, c('Cocoa', '#6b4a3a')], sizes: SIZES,
   },
   {
-    id: 'fleece-zip-jacket', name: 'Fleece Zip Jacket', price: 58, kind: 'jacket', collection: 'Jackets',
+    id: 'fleece-zip-jacket', name: 'Fleece Zip Jacket', price: 320, kind: 'jacket', collection: 'Jackets',
     image: 'p-fleece-trio.webp',
     gallery: ['p-fleece-trio.webp', 'v-fleece-trio.mp4', 'v-fleece-ivory.mp4'],
     swatches: [c('Sand', '#cbb59a'), navy, black, ivory], sizes: SIZES,
   },
   {
-    id: 'lounge-tee-wide-pant-set', name: 'Lounge Tee & Wide Pant Set', price: 62, soldOut: true, kind: 'lounge-set', collection: 'Lounge Sets',
+    id: 'lounge-tee-wide-pant-set', name: 'Lounge Tee & Wide Pant Set', price: 340, soldOut: true, kind: 'lounge-set', collection: 'Lounge Sets',
     image: 'p-lounge-black.webp',
     gallery: ['p-lounge-black.webp'],
     swatches: [at(black, 'p-lounge-black.webp')], sizes: SIZES,
@@ -234,9 +234,10 @@ export function getCollection(h: string) {
 
 /* ---------- Money and cart settings ---------- */
 
-export const money = (n: number) => `$${n.toFixed(2)}`
+// Ghana cedis, e.g. GH₵420.00
+export const money = (n: number) => `GH₵${n.toLocaleString('en-GH', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`
 
-export const FREE_SHIPPING = 100
-export const GIFT_WRAP = 1
+export const FREE_SHIPPING = 800 // GH₵
+export const GIFT_WRAP = 10 // GH₵
 // Codes the mockup's cart accepts (percent off). WELCOME matches the announcement bar.
 export const DISCOUNTS: Record<string, number> = { WELCOME: 10 }

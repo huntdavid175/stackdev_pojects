@@ -60,7 +60,7 @@ export default function Footer() {
           <div className="footer__locale">
             <button>English <ChevronDown size={11} /></button>
             <button>
-              <img src={img('flag-us.webp')} alt="" width="20" height="18" /> United States (USD $) <ChevronDown size={11} />
+              <svg width="20" height="14" viewBox="0 0 30 20" aria-hidden="true"><path fill="#ce1126" d="M0 0h30v7H0z" /><path fill="#fcd116" d="M0 7h30v6H0z" /><path fill="#006b3f" d="M0 13h30v7H0z" /><path d="M15 7.2l1.1 3.4h3.6l-2.9 2.1 1.1 3.4-2.9-2.1-2.9 2.1 1.1-3.4-2.9-2.1h3.6z" /></svg> Ghana (GHS ₵) <ChevronDown size={11} />
             </button>
           </div>
           <div className="footer__legal">

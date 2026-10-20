@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState, type CSSProperties, type ReactNode } from 'react'
-import { typeLabel, type Product } from '../data'
+import { money, typeLabel, type Product } from '../data'
 import { Link } from '../router'
 import { lockScroll, unlockScroll } from '../scrollLock'
 import ProductCard from '../components/ProductCard'
@@ -77,7 +77,7 @@ function PriceInput({ value, label, onCommit }: { value: number; label: string; 
   }
   return (
     <label className="price__field">
-      <span>$</span>
+      <span>GH₵</span>
       <input
         inputMode="decimal"
         aria-label={label}
@@ -216,7 +216,7 @@ export default function CollectionPage({ collection }: { collection: Collection 
     ...filters.sizes.map((v) => ({ label: `Size ${v}`, clear: () => setFilters({ ...filters, sizes: toggle(filters.sizes, v) }) })),
     ...filters.avail.map((v) => ({ label: AVAIL[v as keyof typeof AVAIL], clear: () => setFilters({ ...filters, avail: toggle(filters.avail, v) }) })),
     ...(filters.min > 0 || filters.max < ceiling
-      ? [{ label: `$${filters.min.toFixed(2)} – $${filters.max.toFixed(2)}`, clear: () => setFilters({ ...filters, min: 0, max: ceiling }) }]
+      ? [{ label: `${money(filters.min)} – ${money(filters.max)}`, clear: () => setFilters({ ...filters, min: 0, max: ceiling }) }]
       : []),
   ]
   const clearAll = () => setFilters(empty)

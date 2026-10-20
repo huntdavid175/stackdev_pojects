@@ -248,7 +248,7 @@ function Info({ product, swatch, onSwatch }: { product: Product; swatch: number;
       </div>
 
       <ul className="pdp__perks">
-        <li><BoxIcon /> Free Shipping for orders ${FREE_SHIPPING}+</li>
+        <li><BoxIcon /> Free Shipping for orders {money(FREE_SHIPPING).replace('.00', '')}+</li>
         <li><DollarIcon /> Money back within 30 days for an exchange.</li>
       </ul>
 
@@ -274,7 +274,7 @@ function Info({ product, swatch, onSwatch }: { product: Product; swatch: number;
         </Accordion>
         <Accordion title="Shipping & return">
           <p>
-            Orders ship within 1–2 business days. Free standard shipping on orders over ${FREE_SHIPPING}. Not the right fit? Exchange or return
+            Orders ship within 1–2 business days. Free standard shipping on orders over {money(FREE_SHIPPING).replace('.00', '')}. Not the right fit? Exchange or return
             unworn items within 30 days.
           </p>
         </Accordion>

@@ -336,7 +336,7 @@ export function Offer() {
         <div className="offer__half">
           <p className="eyebrow">Special offer</p>
           <p className="offer__big">Sale 30% off</p>
-          <p className="offer__small">*Ends November 30 2026, 12:00 PST. T&amp;C’s Apply</p>
+          <p className="offer__small">*Ends November 30 2026, 12:00 GMT. T&amp;C’s Apply</p>
         </div>
         <div className="offer__half">
           <h2 className="h2">
